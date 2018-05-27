@@ -1,0 +1,48 @@
+{
+  "name": "Template",
+  "version": "2.0.1",
+  "private": true,
+  "description": "Project template",
+  "author": "Yevhen Dmitrievskiy",
+  "license": "ISC",
+  "devDependencies": {
+    "autoprefixer": "^8.0.0",
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.4",
+    "babel-preset-env": "^1.6.1",
+    "browser-sync": "^2.23.6",
+    "critical": "^1.1.0",
+    "css-mqpacker": "^6.0.2",
+    "del": "^3.0.0",
+    "gulp": "^3.9.1",
+    "gulp-concat": "^2.6.1",
+    "gulp-csso": "^3.0.1",
+    "gulp-imagemin": "^4.1.0",
+    "gulp-plumber": "^1.2.0",
+    "gulp-postcss": "^7.0.1",
+    "gulp-rename": "^1.2.2",
+    "gulp-rigger": "^0.5.8",
+    "gulp-sass": "^3.2.1",
+    "gulp-size": "^3.0.0",
+    "gulp-sourcemaps": "^2.6.1",
+    "gulp-svgmin": "^1.2.4",
+    "gulp-svgstore": "^6.1.1",
+    "gulp-uglify": "^3.0.0",
+    "gulp-webp": "^3.0.0",
+    "gulp.spritesmith": "^6.9.0",
+    "imagemin-pngquant": "^5.0.1",
+    "prettier": "1.11.1",
+    "run-sequence": "^2.2.1",
+    "stylelint-config-htmlacademy": "^0.1.1",
+    "webpack": "^4.6.0",
+    "webpack-stream": "^4.0.3"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "build": "gulp build",
+    "start": "npm run build && gulp serve"
+  },
+  "dependencies": {
+    "babel-polyfill": "^6.26.0"
+  }
+}

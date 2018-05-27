@@ -1,0 +1,27 @@
+//---------VENDORS--------
+
+//---------UTILS----------
+@import "utils/variables";
+@import "utils/grid-mixins";
+@import "utils/other-mixins";
+
+//---------BASE-----------
+@import "base/fonts";
+@import "base/typography";
+@import "base/page";
+
+//---------LAYOUT-----------
+@import "layout/grid";
+@import "layout/header";
+@import "layout/navigation";
+@import "layout/hero";
+@import "layout/content";
+@import "layout/footer";
+
+//---------COMPONENTS-----
+
+@import "components/btn";
+
+//---------PAGES----------
+
+@import "pages/home";

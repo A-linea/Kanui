@@ -1,0 +1,74 @@
+.form {
+  background-color: $gray-lightest;
+  &__wrapper {
+    @include col(xs, 12, 12);
+    @include col(sm, 12, 12);
+    @include col(md, 6, 12);
+    @include col-offset(md, 3, 12);
+    @include col(lg, 6, 12);
+    @include col(xl, 6, 12);
+    @include col(xxl, 6, 12);
+    @include outline();
+    position: relative;
+    text-align: center;
+  }
+
+  &__title {
+    font-size: $font-size--h2;
+    margin-bottom: 0;
+  }
+
+  form {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+  }
+
+  &__input,
+  textarea {
+    background-color: #fff;
+    border: 0;
+    border-bottom: 1px solid rgba(gray, 0.6);
+    border-radius: $border-radius;
+    color: #000;
+    flex-basis: 100%;
+    font-size: 1.6rem;
+    margin-bottom: 2rem;
+    padding: 1.2rem 2rem;
+    resize: none;
+    width: 100%;
+
+    &--name,
+    &--text {
+      flex-basis: 48%;
+    }
+
+    &::placeholder {
+      color: $gray-darken;
+      opacity: 1;
+    }
+  }
+
+  &__form-btn {
+    margin: 3.5rem auto 0;
+    padding: 2rem 3.6rem;
+    background-color: $gray;
+    border: none;
+    color: $gray-darker;
+  }
+}
+
+@media (min-width: $screen-sm) {
+}
+
+@media (min-width: $screen-md) {
+}
+
+@media (min-width: $screen-lg) {
+}
+
+@media (min-width: $screen-xl) {
+}
+
+@media (min-width: $screen-xxl) {
+}

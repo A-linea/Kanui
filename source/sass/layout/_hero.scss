@@ -1,0 +1,28 @@
+.hero {
+  height: 100vh;
+  background-image: linear-gradient(rgba(35, 64, 110, 0.8)),
+  url('../img/webp/hero_bg.jpg');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (min-width: $screen-sm) {
+
+}
+
+@media (min-width: $screen-md) {
+
+}
+
+@media (min-width: $screen-lg) {
+
+}
+
+@media (min-width: $screen-xl) {
+}
+
+@media (min-width: $screen-xxl) {
+  .hero__title {
+    font-size: 1.7rem;
+  }
+}
