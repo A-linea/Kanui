@@ -1,0 +1,26 @@
+.icon {
+  fill: white;
+  transition: $transition-time;
+  &:hover {
+    fill: $accent-color;
+  }
+}
+
+@media (min-width: $mobile) {
+
+}
+
+@media (min-width: $tablet) {
+
+}
+
+@media (min-width: $desktop-sm) {
+
+}
+
+@media (min-width: $desktop) {
+  .icon {
+    width: 1.8rem;
+    height: 1.8rem;
+  }
+}

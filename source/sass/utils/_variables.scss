@@ -1,5 +1,3 @@
-/// Базовые цвета https://colorscheme.ru/color-converter.html
-
 $black: hsl(0, 0%, 0%);
 $gray-darkest: hsl(0, 0%, 10%);
 $gray-darker: hsl(0, 0%, 20%);
@@ -13,7 +11,7 @@ $gray-lightest: hsl(0, 0%, 90%);
 $white: hsl(0, 0%, 100%);
 
 $accent-color: #2ba4a7;
-$color-main: hsl(208, 98%, 43%);
+$color-main: #23406e;
 $color-success: hsl(120, 39%, 54%);
 $color-danger: hsl(2, 64%, 58%);
 $color-warning: hsl(35, 84%, 62%);
@@ -25,18 +23,18 @@ $text-color--muted: $gray;
 $body-bg: #fff;
 
 $link-color: $color-main;
-$link-color--hover: darken($color-main, 15%);
+$link-color--hover: #eca600;
 
 $border-color: $gray-light;
 
 // Ширины
 
 $screen-xs: 0;
-$screen-sm: 480px;
+$screen-sm: 576px;
 $screen-md: 768px;
 $screen-lg: 992px;
-$screen-xl: 1200px;
-$screen-xxl: 1600px;
+$screen-xl: 1280px;
+$screen-xxl: 1280px;
 
 $container-sm: 100%;
 $container-md: 100%;
@@ -44,6 +42,12 @@ $container-lg: $screen-lg - 30;
 $container-xl: $screen-xl - 30;
 $container-xxl: $screen-xxl - 30;
 
+//Media
+$mobile: 576px;
+$tablet: 768px;
+$desktop-sm: 992px;
+$desktop: 1280px;
+$desktop-lg: 1920px;
 // Модульная сетка
 
 $grid-columns: 12;
@@ -54,7 +58,7 @@ $grid-gutter-width: 30px;
 $field-padding-vertical: 0.3rem;
 $field-padding-horizontal: 0.7rem;
 
-$border-radius: 3px;
+$border-radius: 0.3rem;
 $opacity: 0.7;
 $transition-time: 0.3s;
 $shadow: 0 .4rem .2rem -.2rem rgba(0, 0, 0, 0.3);

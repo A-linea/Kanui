@@ -1,0 +1,38 @@
+.header {
+  display: flex;
+}
+
+@media (min-width: $mobile) {
+
+}
+
+@media (min-width: $tablet) {
+
+}
+
+@media (min-width: $desktop-sm) {
+
+}
+
+@media (min-width: $desktop) {
+  .header {
+    padding-top: 3.5rem;
+  }
+
+  .header__logo-container {
+    margin-left: 4.8rem;
+  }
+  .header__icon-container {
+    padding-top: 1.3rem;
+  }
+  .header__btn-container {
+    margin-left: 3.5rem;
+    padding-top: .8rem;
+  }
+  .header__contacts {
+    display: flex;
+    margin-left: 9%;
+
+  }
+
+}

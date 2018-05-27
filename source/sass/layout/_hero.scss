@@ -4,25 +4,39 @@
   url('../img/webp/hero_bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  margin-bottom: 10rem;
 }
 
-@media (min-width: $screen-sm) {
-
-}
-
-@media (min-width: $screen-md) {
+@media (min-width: $mobile) {
 
 }
 
-@media (min-width: $screen-lg) {
+@media (min-width: $tablet) {
 
 }
 
-@media (min-width: $screen-xl) {
+@media (min-width: $desktop-sm) {
+
 }
 
-@media (min-width: $screen-xxl) {
+@media (min-width: $desktop) {
   .hero__title {
-    font-size: 1.7rem;
+    text-align: center;
+    font-size: $font-size--h1;
+    color: white;
+    font-style: italic;
+    letter-spacing: -1px;
+    font-weight: 400;
+    &--accent {
+      display: block;
+      color: $link-color--hover;
+      font-weight: bold;
+    }
+    &-container {
+      margin: 0 auto;
+      max-width: 37.5%;
+      margin-top: 28vh;
+    }
   }
 }
+
