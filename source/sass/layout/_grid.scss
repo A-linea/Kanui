@@ -1,0 +1,28 @@
+.dropdown-container {
+  @include col(xs, 12, 12, 0);
+  @include col(sm, 12, 12, 0);
+  @include col(md, 12, 12);
+  @include col(lg, 12, 12);
+  @include col(xl, 4, 12);
+}
+.dropdown-row {
+  @include row();
+  &:not(:last-child) {
+    margin-bottom: 4rem;
+  }
+}
+
+@media (min-width: $mobile) {
+}
+
+@media (min-width: $tablet) {
+
+}
+
+@media (min-width: $desktop-sm) {
+
+}
+
+@media (min-width: $desktop) {
+
+}

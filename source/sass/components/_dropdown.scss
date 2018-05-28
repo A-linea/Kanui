@@ -1,0 +1,106 @@
+.dropdown {
+  display: flex;
+  box-shadow: 3px 3px 0 0 #00000026;
+  align-items: center;
+  position: relative;
+  cursor: pointer;
+
+  &:before,
+  &:after {
+    content: '';
+    right: 3rem;
+    @include centerer-y();
+    height: 12px;
+    width: 2px;
+    background-color: #fff;
+  }
+  &:after {
+    transform-origin: top;
+    transform: rotate(90deg);
+    right: 2.4rem;
+  }
+
+  &__icon {
+    height: 5rem;
+    width: 1.4rem;
+  }
+
+  &--teal {
+    background-color: $accent-color;
+    color: #fff;
+    fill: $color-main;
+    &:before,
+    &:after {
+      background-color: $color-main;
+    }
+  }
+
+  &--orange {
+    background-color: $link-color--hover;
+    color: #000;
+    fill: #fff;
+  }
+
+  &--dark-gray {
+    background-color: #3c3c3c;
+    color: #fff;
+    fill: $accent-color;
+    &:before,
+    &:after {
+      background-color: $accent-color;
+    }
+  }
+
+  &--black {
+    background-color: #000;
+    color: #fff;
+    fill: $link-color--hover;
+    &:before,
+    &:after {
+      background-color: $link-color--hover;
+    }
+  }
+
+  &--light-gray {
+    background-color: #e7e7e7;
+    color: #000;
+    fill: $color-main;
+    &:before,
+    &:after {
+      background-color: $color-main;
+    }
+  }
+
+  &--dark-blue {
+    background-color: $color-main;
+    color: #fff;
+    fill: $accent-color;
+    &:before,
+    &:after {
+      background-color: $accent-color;
+    }
+  }
+}
+
+@media (min-width: $mobile) {
+}
+
+@media (min-width: $tablet) {
+
+}
+
+@media (min-width: $desktop-sm) {
+
+}
+
+@media (min-width: $desktop) {
+  .dropdown {
+    padding: 1.5rem 3.5rem 1.7rem 2.5rem;
+
+    &__text {
+      margin-left: 2.3rem;
+      font-size: 2rem;
+      font-style: italic;
+    }
+  }
+}
