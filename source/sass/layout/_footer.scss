@@ -1,19 +1,27 @@
-.main-footer {
+.footer {
+
+  &__bottom-row {
+    display: flex;
+    justify-content: space-between;
+    padding: 0.5rem 0;
+  }
+  &__bottom {
+    color: white;
+    background-color: $accent-color;
+  }
+}
+
+@media (min-width: $mobile) {
+}
+
+@media (min-width: $tablet) {
 
 }
 
-@media (min-width: $screen-sm) {
-  
-}
-@media (min-width: $screen-md) {
+@media (min-width: $desktop-sm) {
 
 }
-@media (min-width: $screen-lg) {
 
-}
-@media (min-width: $screen-xl) {
-
-}
-@media (min-width: $screen-xxl) {
+@media (min-width: $desktop) {
 
 }

@@ -27,14 +27,6 @@
     &:focus {
 
     }
-    &--active {
-      &:hover,
-      &:active,
-      &:focus {
-        background-color: transparent;
-      }
-    }
-
   }
 }
 
@@ -76,11 +68,7 @@
   }
 }
 
-.active {
-  color: $link-color--hover;
-  text-decoration: underline;
-  background-color: transparent;
-}
+
 
 @media (min-width: $desktop-sm) {
 

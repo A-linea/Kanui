@@ -1,4 +1,3 @@
-import 'babel-polyfill';
 import $ from 'jquery';
 $(document).ready(() => {
   let str = `window location is ${window.location}`;
