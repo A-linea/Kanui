@@ -1,0 +1,137 @@
+.scheme {
+  margin: 0 auto;
+  max-width: 67%;
+  color: $color-main;
+
+  &__top {
+    display: flex;
+    justify-content: space-between;
+  }
+  &__mid {
+    display: flex;
+    justify-content: space-between;
+  }
+
+  &__title {
+    font-style: italic;
+    font-weight: 700;
+    color: currentColor;
+  }
+
+  &__text {
+    color: currentColor;
+  }
+
+}
+
+@media (min-width: $mobile) {
+}
+
+@media (min-width: $tablet) {
+
+}
+
+@media (min-width: $desktop-sm) {
+
+}
+
+@media (min-width: $desktop) {
+  .scheme {
+    margin: 0 auto;
+    max-width: 67%;
+    margin-bottom: 4rem;
+
+    &__top {
+
+    }
+    &__mid {
+      margin-top: 1rem;
+
+    }
+    &__bot {
+      max-width: 30%;
+      margin: 0 auto;
+      margin-top: .5rem;
+    }
+    &__arrow {
+      display: inline-block;
+      background-repeat: no-repeat;
+      position: relative;
+
+      &--top,
+      &--bot {
+        width: 3.5rem;
+        height: auto;
+        &:before {
+          content: '';
+          @include centerer-x();
+          background-color: $color-main;
+          width: 1px;
+          height: 30px;
+        }
+      }
+
+      &--top {
+        margin-bottom: 2rem;
+        transform: rotate(180deg);
+        background-image: url('../img/icons_svg/arrow_scheme.svg');
+
+        &:before {
+          bottom: 6px;
+          height: 6.2rem;
+        }
+      }
+      &--bot {
+        margin-top: 1rem;
+        padding-top: 1rem;
+        background-image: url('../img/icons_svg/arrow_scheme.svg');
+        &:before {
+          width: 1px;
+          height: 4.9rem;
+        }
+
+      }
+
+      &--left-side,
+      &--right-side {
+        height: 3.5rem;
+        width: auto;
+        background-image: url('../img/icons_svg/arrow_scheme_left.svg');
+        &:before {
+          content: '';
+          @include centerer-y();
+          background-color: $color-main;
+          height: 1px;
+        }
+      }
+
+      &--left-side {
+        background-position: 100%;
+        padding-left: 16rem;
+        &:before {
+          left: 1.6rem;
+          width: 84%;
+        }
+      }
+      &--right-side {
+        background-position: 0;
+        padding-right: 16rem;
+
+        &:before {
+          right: 1.7rem;
+          width: 88%;
+        }
+      }
+    }
+
+    &__title {
+      font-size: 2.5rem;
+    }
+    &__text {
+      text-align: center;
+      font-size: 1.5rem;
+      line-height: 1.4;
+    }
+
+  }
+}
