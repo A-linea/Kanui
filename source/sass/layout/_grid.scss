@@ -11,6 +11,9 @@
     margin-bottom: 4rem;
   }
 }
+.cards-container {
+
+}
 
 @media (min-width: $mobile) {
 }
@@ -24,5 +27,12 @@
 }
 
 @media (min-width: $desktop) {
-
+  .cards-container {
+    flex-basis: 31.463195%;
+    max-width: 31.463195%;
+    &--wider {
+      flex-basis: 37.073608617%;
+      max-width: 37.073608617%;
+    }
+  }
 }

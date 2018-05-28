@@ -1,0 +1,182 @@
+.card {
+  margin: 2rem 0;
+  padding: 2.4rem 3.7rem 3rem 2.7rem;
+  box-shadow: 0 0 10px 0 #00000026;
+  position: relative;
+
+  &--white {
+    background-color: #fff;
+  }
+
+  &--dark-blue {
+    margin: 0;
+    padding-bottom: 5rem;
+    color: #fff;
+    background-color: $color-main;
+  }
+
+  &--orange {
+    color: #fff;
+    background-color: $link-color--hover;
+  }
+
+  &__top-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  //@TODO card-icon width
+  &__icon {
+    height: 4rem;
+    width: 4rem;
+  }
+  &__number {
+    font-weight: 700;
+    font-style: italic;
+    &--dark-blue {
+      color: $color-main;
+    }
+
+    &--teal {
+      color: $accent-color;
+    }
+
+    &--white {
+      color: #fff;
+    }
+  }
+
+  &__title {
+    font-style: italic;
+    font-weight: 700;
+    margin-bottom: 2.2rem;
+    max-width: 50%;
+
+    &--dark-blue {
+      color: $color-main;
+    }
+
+    &--wide {
+      max-width: 70%;
+    }
+  }
+
+  &__list {
+    font-size: 1.5rem;
+    list-style-type: none;
+
+    &--dark-gray {
+      color: #565656;
+      & > *:before {
+        background-color: #565656;
+      }
+    }
+
+    &--light-gray {
+      color: #d0d0d0;
+      & > *:before {
+        background-color: #d0d0d0;
+      }
+    }
+
+    &--black {
+      color: #000;
+      & > *:before {
+        background-color: #000;
+      }
+    }
+
+  }
+
+  &__item {
+    position: relative;
+    &:before {
+      content: '';
+      @include centerer-y();
+      left: -1rem;
+      width: 4px;
+      height: 4px;
+      border-radius: 50%;
+    }
+  }
+
+}
+
+@media (min-width: $mobile) {
+}
+
+@media (min-width: $tablet) {
+
+}
+
+@media (min-width: $desktop-sm) {
+
+}
+
+@media (min-width: $desktop) {
+
+  .card {
+    padding: 2.4rem 3.7rem 3rem 3.7rem;
+    &--dark-blue {
+      margin: 0;
+      padding-left: 4.7rem;
+      padding-bottom: 7rem;
+
+      &:before {
+        @include centerer-y();
+        left: -.5rem;
+        @include triangle(right)
+      }
+    }
+
+    &--orange {
+      &:before {
+        @include centerer-y();
+        left: -.5rem;
+        @include triangle(right, $color-main)
+      }
+    }
+
+    &__number {
+      padding-left: 1.7rem;
+      font-size: 5rem;
+      position: relative;
+
+      &:before {
+        content: '';
+        @include centerer-y();
+
+        left: 0;
+        width: 1.4rem;
+        height: 4rem;
+        background-repeat: no-repeat;
+      }
+
+      &--dark-blue {
+        &:before {
+          background-image: url('../img/icons_svg/card_lines.svg');
+        }
+      }
+
+      &--teal {
+        &:before {
+          background-image: url('../img/icons_svg/card_lines.svg');
+        }
+      }
+
+      &--white {
+        &:before {
+          background-image: url('../img/icons_svg/card_lines_white.svg');
+        }
+      }
+    }
+
+    &__title {
+      font-size: 2.5rem;
+      padding-top: 3rem;
+    }
+
+    &__list {
+      line-height: 1.7;
+    }
+  }
+}

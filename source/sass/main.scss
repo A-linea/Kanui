@@ -4,6 +4,7 @@
 @import "utils/variables";
 @import "utils/grid-mixins";
 @import "utils/other-mixins";
+@import "utils/utility";
 
 //---------BASE-----------
 @import "base/fonts";
@@ -26,6 +27,7 @@
 @import "components/heading";
 @import "components/dropdown";
 @import "components/person";
+@import "components/card";
 
 
 //---------PAGES----------

@@ -38,7 +38,7 @@
   white-space: nowrap; /* 1 */
 }
 
-@mixin triangle($direction, $color: currentcolor, $size: 16px) {
+@mixin triangle($direction, $color: currentcolor, $size: 30px) {
   @if not index(top right bottom left, $direction) {
     @error "Direction must be either `top`, `right`, `bottom` or `left`.";
   }
