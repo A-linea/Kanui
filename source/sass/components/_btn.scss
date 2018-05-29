@@ -18,6 +18,12 @@
   cursor: pointer;
   transition: $transition-time;
 
+  &--orange {
+    text-align: left;
+    background-color: $link-color--hover;
+    color: $color-main;
+  }
+
   &:hover,
   &:focus {
     background-color: $link-color--hover;

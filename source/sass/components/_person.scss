@@ -1,7 +1,20 @@
 .person {
   color: white;
+  max-width: 10rem;
+  padding-top: 2rem;
+  position: relative;
 
+  &__image-container {
+    border-radius: 50%;
+    overflow: hidden;
+  }
 
+  &__name {
+    display: block;
+    text-align: center;
+    font-style: italic;
+    font-weight: 400;
+  }
 
   &__position {
     //text-align: center;
@@ -25,8 +38,68 @@
 
 @media (min-width: $desktop) {
 
-  .person__position {
-    display: block;
-    font-size: 1.3rem;
+  .person {
+    max-width: 20rem;
+    padding-top: 3.5rem;
+
+    &__name {
+      margin-top: 2rem;
+    }
+
+    &__position {
+      display: block;
+      text-align: center;
+      font-size: 1.3rem;
+      margin-bottom: 2.5rem;
+    }
+    //@TODO link to linked in
+    &:before {
+      content: '';
+      @include centerer-x();
+      top: 0;
+      opacity: 0;
+      height: 2rem;
+      width: 2rem;
+      background-repeat: no-repeat;
+      background-size: cover;
+      background-position: center;
+      background-image: url(../img/icons_svg/icon_Ln_white.svg);
+      transition: $transition-time;
+    }
+
+
+    &:hover,
+    &:active
+    {
+      &:before {
+        opacity: 1;
+        top: 5px;
+      }
+      .person__btn {
+        transform: translateY(0);
+        opacity: 1;
+      }
+      .person__name,
+      .person__position {
+        font-weight: 700;
+        transition: font-weight .3s ease;
+      }
+    }
+    &__btn {
+      display: block;
+      opacity: 0;
+      transform: translateY(5px);
+      width: 100%;
+      position: relative;
+      &::after {
+        content: '';
+        right: 20px;
+        height: 13px;
+        width: 15px;
+        @include centerer-y();
+        background-repeat: no-repeat;
+        background-image: url('../img/icons_svg/icon_message.svg');
+      }
+    }
   }
 }

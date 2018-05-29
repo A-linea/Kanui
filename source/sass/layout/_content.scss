@@ -203,6 +203,9 @@
 
   .solutions__analytics-container {
     padding-bottom: 37rem;
+    background-image: url(../img/webp/solutions_bg-2.png);
+    background-repeat: no-repeat;
+    background-position: 0 110%;
 
   }
 
@@ -210,4 +213,11 @@
     max-width: 85%;
     margin: 0 auto;
   }
+
+  .about__heading-container {
+    padding-top: 9rem;
+    margin-bottom: 9rem;
+  }
 }
+
+
