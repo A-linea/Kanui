@@ -1,0 +1,75 @@
+@media (min-width: $mobile) {
+
+}
+
+@media (min-width: $tablet) {
+
+}
+
+@media (min-width: $desktop-sm) {
+
+}
+
+@media (min-width: $desktop) {
+  .form {
+
+    &__input {
+      padding: 1.4rem 0 1.7rem 2rem;
+      font-family: $font-family;
+      font-size: 1.2rem;
+      color: $color-main;
+      line-height: 1;
+      width: 100%;
+      border: 1.1px solid #dcdcdc;
+      border-radius: 5rem;
+      outline: none;
+      transition: $transition-time;
+
+      &:active,
+      &:focus {
+        border: 1.1px solid $color-main;
+        box-shadow: 0px 0px 5px 0 #23406e30;
+      }
+      &:not(:last-child) {
+        margin-bottom: 2rem;
+      }
+      &::placeholder {
+        color: #8d8d8d;
+        font-size: 1.2rem;
+        text-transform: uppercase;
+      }
+    }
+
+    &__btn {
+      width: 50%;
+      padding: 1.4rem 0 1.7rem 2rem;
+      font-weight: 400;
+      background-color: transparent;
+      text-align: left;
+      border: 1px solid $color-main;
+      color: $color-main;
+      position: relative;
+      transition: $transition-time;
+      &:before {
+        content: '';
+        right: 20px;
+        height: 13px;
+        width: 15px;
+        @include centerer-y();
+        background-repeat: no-repeat;
+        background-image: url('../img/icons_svg/icon_message.svg');
+      }
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: $color-main;
+        color: white;
+        &:before {
+          background-image: url('../img/icons_svg/icon_message_white.svg');
+        }
+      }
+    }
+
+  }
+}
+

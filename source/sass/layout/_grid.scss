@@ -39,6 +39,7 @@
   @include col(md, 12, 12);
   @include col(lg, 12, 12);
   @include col(xl, 3, 12);
+  margin-bottom: 9rem;
 }
 
 .footer__form-container {

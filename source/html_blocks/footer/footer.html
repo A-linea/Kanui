@@ -11,7 +11,8 @@
           <div class="footer__company-text-container">
             <p class="footer__company-text">Your
               <strong class="footer__company-text footer__company-text--accent">Tax
-                                                                                Compliance</strong> and
+                                                                                Compliance</strong>
+                                            and
                                             Regulatory Reporting
                                             partners</p>
           </div>
@@ -28,32 +29,37 @@
             <a href="#" class="btn footer__btn">View map</a>
           </div>
           <div class="footer__social-container">
-            <p>follow us</p>
+            <h4 class="footer__contacts-title">follow us</h4>
             <a href="#" class="footer__social-link">
-              Linkedin
+              <svg class="footer__social-icon">
+                <use xlink:href="img/sprite.svg#linkedIn_logo"></use>
+              </svg>
             </a>
           </div>
         </div>
         <div class="footer__form-container">
-          <form action="#" class="footer__form">
-            <input type="text" placeholder="Name*">
-            <input type="text" placeholder="email*">
-            <input type="text" placeholder="Your message">
-            <input type="submit" name="send" value="send" class="btn footer__form-btn">
+          <form action="#" class="form">
+            <h4 class="form__title footer__contacts-title">Drop us a line</h4>
+            <input class="form__input" type="text" placeholder="Name*">
+            <input class="form__input" type="text" placeholder="email*">
+            <input class="form__input" type="text" placeholder="Your message">
+            <button type="submit" name="send" value="send"
+                    class="btn form__btn"> send
+            </button>
           </form>
         </div>
       </div>
     </div>
   </div>
-    <div class="footer__bottom">
-      <div class="container">
-        <div class="footer__bottom-row">
-          <p class="footer__copyright">&copy; 2018 Kanuni. All</p>
-          <div class="footer__sitemap-container">
-            <span class="footer__sitemap-text">Sitemap</span>
-            <span class="footer__sitemap-text">Legal</span>
-          </div>
+  <div class="footer__bottom">
+    <div class="container">
+      <div class="footer__bottom-row">
+        <p class="footer__copyright">&copy; 2018 Kanuni. All</p>
+        <div class="footer__sitemap-container">
+          <span class="footer__sitemap-text">Sitemap</span>
+          <span class="footer__sitemap-text">Legal</span>
         </div>
       </div>
     </div>
+  </div>
 </footer>

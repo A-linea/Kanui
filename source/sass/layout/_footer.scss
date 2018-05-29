@@ -35,9 +35,16 @@
     height: 3rem;
     width: 8rem;
   }
+
+  &__social-icon {
+    height: 2.8rem;
+    width: 10.2rem;
+  }
+
   &__bottom {
     color: white;
     background-color: $accent-color;
+    padding: 1rem 0;
   }
 }
 
@@ -96,6 +103,10 @@
       }
     }
 
+    &__btn-container {
+      margin-bottom: 3rem;
+    }
+
     &__btn {
       margin-top: 3rem;
       display: block;
@@ -104,6 +115,7 @@
       font-size: 1.3rem;
       text-decoration: none;
       transition: $transition-time;
+      position: relative;
       &:hover {
         background-color: $color-main;
       }
@@ -112,10 +124,29 @@
         @include centerer-y();
         width: 1.2rem;
         height: 1.8rem;
+        right: 2rem;
         background-repeat: no-repeat;
         background-image: url(../img/icons_svg/icon_map.svg);
-        
       }
+    }
+
+    &__social-container {
+      display: flex;
+      flex-direction: column;
+    }
+
+    &__social-link {
+      text-decoration: none;
+      backface-visibility: hidden;
+      transition: $transition-time;
+      &:hover {
+        transform: translateY(-1px);
+      }
+    }
+
+    &__social-icon {
+      height: 2.7rem;
+      width: 10.2rem;
     }
 
     &__sitemap-container {
