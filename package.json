@@ -43,6 +43,7 @@
     "start": "npm run build && gulp serve"
   },
   "dependencies": {
-    "babel-polyfill": "^6.26.0"
+    "babel-polyfill": "^6.26.0",
+    "page-scroll-to-id": "^1.5.8"
   }
 }

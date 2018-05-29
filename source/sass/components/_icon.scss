@@ -1,8 +1,13 @@
 .icon {
   fill: white;
   transition: $transition-time;
+
   &:hover {
     fill: $accent-color;
+  }
+
+  &--black {
+    fill: #000;
   }
 }
 

@@ -22,6 +22,12 @@
     color: #bababa;
     text-align: center;
     transition: $transition-time;
+
+    &--bar {
+      transition: $transition-time;
+      color: #919191;
+    }
+
     &:hover,
     &:active,
     &:focus {
@@ -44,40 +50,52 @@
 
   .main-nav__list {
     display: flex;
+    padding-top: 1rem;
     justify-content: space-between;
     font-size: 1.3rem;
   }
   .main-nav__link {
     font-size: 1.4rem;
+    padding: 0.7rem 0;
+    padding-left: 2rem;
+
     &:hover {
       color: white;
-    }
-    &:active,
-    &:focus {
-      color: $link-color--hover;
-      text-decoration: underline;
-      background-color: transparent;
 
     }
-    &--active {
+    &--bar {
       &:hover {
-        color: $link-color;
-        text-decoration: none;
+        color: black;
+      }
+    }
+
+    &--active,
+    &:active,
+    &:focus {
+      transition: $transition-time;
+      color: $link-color--hover;
+      font-size: 1.4rem;
+      font-weight: 700;
+      position: relative;
+      &::before {
+        content: '';
+        @include centerer-y();
+        width: 1.6rem;
+        height: 3.7rem;
+        left: 0;
+        background-repeat: no-repeat;
+        background-image: url(../img/icons_svg/nav_lines.svg);
       }
     }
   }
 }
 
-
-
 @media (min-width: $desktop-sm) {
 
 }
 
-
 @media (min-width: $desktop) {
   .main-nav {
-    padding-top: 1.4rem;
     margin-left: 15%;
   }
 
