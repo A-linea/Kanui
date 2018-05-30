@@ -23,12 +23,18 @@
     background-color: $link-color--hover;
     color: $color-main;
   }
+  &--resources {
+    background-color: transparent;
+    padding: 0;
+    background-image: url('../img/icons_svg/arrow_right.svg');
+    background-repeat: no-repeat;
+    background-position: 90% 50%;
+  }
 
   &:hover,
   &:focus {
     background-color: $link-color--hover;
-
-}
+  }
 
   &:active,
   &:focus {
@@ -137,6 +143,18 @@
     font-size: 1.3rem;
     letter-spacing: 1.9px;
     line-height: 1;
+
+    &--resources {
+      padding: 1rem 2rem;
+      background-image: url('../img/icons_svg/arrow_right.svg');
+      background-repeat: no-repeat;
+      background-position: 50% 50%;
+
+      &:hover,
+      &:focus {
+        background-color: transparent;
+      }
+    }
   }
 }
 

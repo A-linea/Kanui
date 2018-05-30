@@ -1,0 +1,49 @@
+.map {
+  height: 100%;
+  width: 100%;
+  background-image: url(../img/webp/map.png);
+  background-repeat: no-repeat;
+  background-position: 50% 50%;
+  position: absolute;
+
+  &__list {
+    list-style-type: none;
+    display: flex;
+  }
+
+  &__link {
+    padding-left: 6rem;
+    text-decoration: none;
+    font-style: italic;
+    text-transform: uppercase;
+    color: #fff;
+
+    &:hover,
+    &:active {
+      font-weight: 700;
+    }
+
+  }
+
+}
+
+
+@media (min-width: $mobile) {
+}
+
+@media (min-width: $tablet) {
+
+}
+
+@media (min-width: $desktop-sm) {
+
+}
+
+@media (min-width: $desktop) {
+  .map {
+
+    &__list {
+      margin-left: 4rem;
+    }
+  }
+}

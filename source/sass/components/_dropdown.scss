@@ -1,9 +1,55 @@
 .dropdown {
   display: flex;
+  //transition: box-shadow 0.3s cubic-bezier(1,1.48,1,.44) -1s;
   box-shadow: 3px 3px 0 0 #00000026;
   align-items: center;
   position: relative;
   cursor: pointer;
+
+  &__content {
+    position: relative;
+    background-color: currentColor;
+    max-height: 0;
+    transition: max-height .3s ease-out, box-shadow .3s ease;
+    overflow: hidden;
+    box-shadow: 3px 3px 0 0 #00000026;
+    z-index: 5;
+
+    &--teal {
+      background-color: $accent-color;
+      color: $color-main;
+    }
+
+    &--orange {
+      background-color: $link-color--hover;
+      color: #fff;
+    }
+
+    &--dark-gray {
+      background-color: #3c3c3c;
+      color: $accent-color;
+    }
+
+    &--black {
+      background-color: #000;
+      color: $link-color--hover;
+    }
+
+    &--light-gray {
+      background-color: #e7e7e7;
+      color: $color-main;
+    }
+
+    &--dark-blue {
+      background-color: $color-main;
+      color: $accent-color;
+    }
+  }
+
+  &__list {
+    font-style: italic;
+  }
+
 
   &:before,
   &:after {
@@ -18,6 +64,18 @@
     transform-origin: top;
     transform: rotate(90deg);
     right: 2.4rem;
+  }
+
+  &-is--active {
+    box-shadow: 3px 3px 0 0 #00000026;
+
+    .dropdown__text {
+      font-weight: 700;
+    }
+    &:before {
+      display: none;
+    }
+
   }
 
   &__icon {
@@ -96,6 +154,14 @@
 @media (min-width: $desktop) {
   .dropdown {
     padding: 1.5rem 3.5rem 1.7rem 2.5rem;
+
+    &__content {
+      padding-left: 6rem;
+    }
+    &__list {
+      padding-bottom: 1.8rem;
+      font-size: 1.6rem;
+    }
 
     &__text {
       margin-left: 2.3rem;

@@ -15,5 +15,20 @@
   .logo {
     height: 5.8rem;
     width: 16rem;
+
+    &--hidden {
+      display: none;
+    }
+
+    &--nav-bar {
+      height: 5.8rem;
+      width: 16rem;
+      display: none;
+      transform: translateY(-100rem);
+      &-is-active {
+        display: block;
+        transform: translateY(0);
+      }
+    }
   }
 }

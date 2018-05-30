@@ -1,6 +1,14 @@
 .solutions-section {
   background-color: #f7f7f7;
 }
+.resources__text {
+  font-style: italic;
+
+  &--accent {
+    font-weight: 700;
+    color: $link-color--hover;
+  }
+}
 
 .map-section {
   background-color: $accent-color;
@@ -29,6 +37,14 @@
   }
   .solutions-section {
     padding-top: 8rem;
+  }
+  .resources-section {
+    padding: 10rem 0 16rem;
+  }
+  .map-section {
+    padding-top: 3.5rem;
+    position: relative;
+    min-height: 80rem;
   }
   .features__text {
     margin: 0 auto;
@@ -187,7 +203,7 @@
     font-size: $font-size--h2;
     max-width: 44%;
     font-style: italic;
-    color: $link-color--hover;
+    color: $text-color-accent;
   }
   .solutions__services-text {
     margin-left: 6rem;
@@ -214,6 +230,23 @@
     max-width: 85%;
     margin: 0 auto;
   }
+  .resources__top-container {
+    display: flex;
+    justify-content: space-between;
+  }
+  .resources__text {
+    margin-top: 1rem;
+    font-size: 1.6rem;
+  }
+  .resources__form {
+    width: 30%;
+  }
+
+  .resources__filter-container {
+    display: flex;
+    justify-content: flex-end;
+  }
+
 
   .about__heading-container {
     padding-top: 9rem;

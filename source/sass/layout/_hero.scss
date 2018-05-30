@@ -1,6 +1,7 @@
 .hero {
   height: 100vh;
   background-image: linear-gradient(rgba(35, 64, 110, 0.8)),
+  //@TODO fix gradient
   url('../img/webp/hero_bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
@@ -19,6 +20,10 @@
 }
 
 @media (min-width: $desktop) {
+  .hero {
+
+
+  }
   .hero__title {
     text-align: center;
     font-size: $font-size--h1;
@@ -30,21 +35,20 @@
 
     &--accent {
       display: block;
-      color: $link-color--hover;
+      color: $text-color-accent;
       font-weight: bold;
     }
 
     &-container {
-      padding-top: 11rem;
+      padding-top: 42rem;
       margin: 0 auto;
       max-width: 37.5%;
-      margin-top: 21vh;
       position: relative;
 
       &::before {
         content: '';
         @include centerer-x;
-        top: 0;
+        top: 31rem;
         height: 7rem;
         width: 2.1rem;
         background-image: url('../img/icons_svg/hero_lines.svg');

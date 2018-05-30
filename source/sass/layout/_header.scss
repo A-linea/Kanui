@@ -1,5 +1,6 @@
 .header {
   display: flex;
+  transition: $transition-time;
 }
 
 @media (min-width: $mobile) {
@@ -17,6 +18,17 @@
 @media (min-width: $desktop) {
   .header {
     padding-top: 3.5rem;
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 100;
+
+    &--is-active {
+      background-color: #fff;
+      padding: 1.5rem 0 2rem;
+      box-shadow: 0 0 20px 0 #0000003d;
+    }
+
   }
 
   .header__logo-container {

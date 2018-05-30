@@ -18,7 +18,7 @@
 
   &__position {
     //text-align: center;
-    color: $link-color--hover;
+    color: $text-color-light;
     text-transform: uppercase;
   }
 }
@@ -44,6 +44,7 @@
 
     &__name {
       margin-top: 2rem;
+      margin-bottom: 0.5rem;
     }
 
     &__position {
