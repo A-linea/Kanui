@@ -7,7 +7,7 @@ import {coverage} from './components/map';
 $(document).ready(() => {
 
   $(".main-nav__link").mPageScroll2id({
-    offset: 0,
+    offset: 102,
     highlightClass: "main-nav__link--active"
   });
 

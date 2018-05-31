@@ -1,12 +1,27 @@
 .person {
   color: white;
   max-width: 10rem;
-  padding-top: 2rem;
   position: relative;
 
+  &-icon-box {
+    text-align: center;
+    padding-bottom: 1rem;
+  }
+
+  &__icon {
+    fill: white;
+    opacity: 0;
+    transform: translateY(-5px);
+    &:hover {
+      fill: $link-color--hover;
+    }
+  }
+
   &__image-container {
+    font-size: 0;
     border-radius: 50%;
     overflow: hidden;
+    border: .4rem solid transparent;
   }
 
   &__name {
@@ -22,7 +37,6 @@
     text-transform: uppercase;
   }
 }
-
 
 @media (min-width: $mobile) {
 
@@ -40,7 +54,6 @@
 
   .person {
     max-width: 20rem;
-    padding-top: 3.5rem;
 
     &__name {
       margin-top: 2rem;
@@ -53,32 +66,27 @@
       font-size: 1.3rem;
       margin-bottom: 2.5rem;
     }
-    //@TODO link to linked in
-    &:before {
-      content: '';
-      @include centerer-x();
-      top: 0;
-      opacity: 0;
-      height: 2rem;
-      width: 2rem;
-      background-repeat: no-repeat;
-      background-size: cover;
-      background-position: center;
-      background-image: url(../img/icons_svg/icon_Ln_white.svg);
-      transition: $transition-time;
-    }
-
 
     &:hover,
-    &:active
-    {
-      &:before {
+    &:active {
+      transition: $transition-time;
+
+      .person__icon {
         opacity: 1;
-        top: 5px;
+        transform: translateY(0);
+
       }
+
       .person__btn {
         transform: translateY(0);
         opacity: 1;
+      }
+      .person__image {
+        filter: grayscale(70%);
+        transition: $transition-time;
+      }
+      .person__image-container {
+        border: .4rem solid $link-color--hover;
       }
       .person__name,
       .person__position {
@@ -99,7 +107,7 @@
         width: 15px;
         @include centerer-y();
         background-repeat: no-repeat;
-        background-image: url('../img/icons_svg/icon_message.svg');
+        background-image: url('../img/icons_svg/icon_message_black.svg');
       }
     }
   }

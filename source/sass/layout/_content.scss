@@ -91,13 +91,16 @@
     &--cloud {
       padding-left: 16rem;
     }
-    &--cloud:before {
-      left: 8rem;
-      background-image: url('../img/icons_svg/icon_on_premise.svg');
-    }
+
     &--premise:before {
       background-image: url('../img/icons_svg/icon_on_premise.svg');
     }
+
+    &--cloud:before {
+      left: 8rem;
+      background-image: url('../img/icons_svg/icon_on_cloud.svg');
+    }
+
     &--premise:after {
       content: '';
       right: 0;
