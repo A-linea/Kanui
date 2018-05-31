@@ -6,11 +6,11 @@ export const accord = element => {
     acc[i].onclick = function() {
       this.classList.toggle(`${element}-is--active`);
       const panel = this.nextElementSibling;
-      console.log(panel);
       if (panel.style.maxHeight){
         panel.style.maxHeight = null;
       } else {
         panel.style.maxHeight = panel.scrollHeight + "px";
+
       }
     }
   }

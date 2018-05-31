@@ -33,10 +33,11 @@
 @media (min-width: $desktop) {
   .features-section {
     padding-top: 10rem;
-    margin-bottom: 31.7rem;
+    padding-bottom: 47.7rem;
   }
   .solutions-section {
     padding-top: 8rem;
+
   }
   .resources-section {
     padding: 10rem 0 16rem;
@@ -106,7 +107,6 @@
       background-repeat: no-repeat;
       background-image: url('../img/icons_svg/solution_lines.svg');
     }
-
   }
 
   .solutions__title {
@@ -137,6 +137,7 @@
       text-align: left;
     }
   }
+
   .solutions__list {
     display: flex;
     margin: 0 auto;
@@ -155,6 +156,7 @@
       background-repeat: no-repeat;
     }
   }
+
   .solutions__item {
     font-size: 2rem;
     font-style: italic;
@@ -168,6 +170,7 @@
       list-style-type: disc;
     }
   }
+
   .solutions-container {
     margin: 0 auto;
     margin-top: 4.5rem;
@@ -230,6 +233,7 @@
     max-width: 85%;
     margin: 0 auto;
   }
+
   .resources__top-container {
     display: flex;
     justify-content: space-between;
@@ -244,7 +248,19 @@
 
   .resources__filter-container {
     display: flex;
-    justify-content: flex-end;
+    margin-right: auto;
+  }
+  .resources__progress-scroll-container {
+    width: 100%;
+    margin-top: 1rem;
+    height: 2px;
+    background: #ccc;
+  }
+
+  .resources__progress-scroll {
+    height: 2px;
+    background: $link-color--hover;
+    width: 0;
   }
 
 
