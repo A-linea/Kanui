@@ -1,6 +1,8 @@
 import {accord} from './components/accord';
 import {mPageScroll2id} from 'page-scroll-to-id';
 import {horizontalScroll} from './components/horizontalScroll';
+import {dropdownFilter} from './components/dropdownFilter';
+import {coverage} from './components/map';
 
 $(document).ready(() => {
 
@@ -42,40 +44,11 @@ $(window).scroll(function () {
 //Dropdown features section
 accord('dropdown');
 
-
 const scrollContent = document.querySelector('.resources__articles-container');
-// function horizontalscrollEvent() {
-//   function scrollHorizontally(e) {
-//     e = window.event || e;
-//     const delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
-//     const data = scrollContent.scrollLeft -= (delta * 30);
-//     // Multiplied by 30
-//     const scroll = scrollContent.scrollLeft;
-//     e.preventDefault();
-//     // console.log(scroll);
-//     function scrollProgress() {
-//       const scroll = scrollContent.scrollLeft;
-//       console.log(scroll);
-//       const width = scrollContent.scrollWidth;
-//       console.log(width);
-//       const scrolled = (scroll / (width-1114)) * 100;
-//        document.querySelector(".resources__progress-scroll").style.width = scrolled + "%";
-//     }
-//     scrollProgress();
-//   }
-//   if (document.querySelector('.resources__articles-container').addEventListener) {
-//     // IE9, Chrome, Safari, Opera
-//     document.querySelector('.resources__articles-container').addEventListener("mousewheel", scrollHorizontally, false);
-//     // Firefox
-//     document.querySelector('.resources__articles-container').addEventListener("DOMMouseScroll", scrollHorizontally, false);
-//   } else {
-//     // IE 6/7/8
-//     document.querySelector('.resources__articles-container').attachEvent("onmousewheel", scrollHorizontally);
-//   }
-// };
-horizontalScroll(scrollContent);
-// horizontalscrollEvent();
 
+horizontalScroll(scrollContent);
+dropdownFilter("filter__btn");
+coverage();
 
 
 
