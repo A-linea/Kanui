@@ -1,34 +1,51 @@
+.logo {
+  height: 4rem;
+  width: 11.1rem;
 
-@media (min-width: $screen-sm) {
+  &--hidden {
+    display: none;
+  }
+
+  &--nav-bar {
+    height: 4.1rem;
+    width: 11.1rem;
+    display: none;
+    transform: translateY(-100rem);
+    &-is-active {
+      display: block;
+      transform: translateY(0);
+    }
+  }
+}
+@media (min-width: $mobile)  {
 
 }
 
-@media (min-width: $screen-md) {
-
-}
-
-@media (min-width: $screen-lg) {
-
-}
-
-@media (min-width: $screen-xl) {
+@media (min-width: $tablet){
   .logo {
     height: 5.8rem;
     width: 16rem;
 
-    &--hidden {
-      display: none;
+    &--nav-bar {
+      height: 5.8rem;
+      width: 16rem;
     }
+  }
+}
+
+@media (min-width: $desktop-sm){
+
+  .logo {
+    height: 5.8rem;
+    width: 16rem;
 
     &--nav-bar {
       height: 5.8rem;
       width: 16rem;
-      display: none;
-      transform: translateY(-100rem);
-      &-is-active {
-        display: block;
-        transform: translateY(0);
-      }
     }
   }
+}
+
+@media (min-width: $desktop) {
+
 }

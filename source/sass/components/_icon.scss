@@ -1,6 +1,8 @@
 .icon {
   fill: white;
   transition: $transition-time;
+  width: 1.8rem;
+  height: 1.8rem;
 
   &:hover {
     fill: $accent-color;

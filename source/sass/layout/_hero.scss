@@ -1,9 +1,43 @@
 .hero {
   height: 100vh;
-  background-image: linear-gradient(90deg, rgba(35, 64, 110, 0.8)0%, rgba(35, 64, 110, 0.8)100%),
+  background-image: linear-gradient(90deg, rgba(35, 64, 110, 0.8) 0%, rgba(35, 64, 110, 0.8) 100%),
   url('../img/webp/hero_bg.jpg');
   background-repeat: no-repeat;
   background-size: cover;
+  background-position: center;
+
+  &__title {
+    text-align: center;
+    font-size: 2.5rem;
+    color: white;
+    font-style: italic;
+    letter-spacing: -1px;
+    font-weight: 400;
+
+    &--accent {
+      display: block;
+      color: $text-color-accent;
+      font-weight: 700;
+    }
+
+    &-container {
+      padding-top: 27.5rem;
+      margin: 0 auto;
+      max-width: 87%;
+      position: relative;
+
+      &::before {
+        content: '';
+        @include centerer-x;
+        top: 21.4rem;
+        height: 4.2rem;
+        width: 1.2rem;
+        background-image: url('../img/icons_svg/hero_lines.svg');
+        background-repeat: no-repeat;
+        background-size: contain;
+      }
+    }
+  }
 }
 
 @media (min-width: $mobile) {
@@ -15,45 +49,28 @@
 }
 
 @media (min-width: $desktop-sm) {
+  .hero {
 
+    &__title {
+      font-size: $font-size--h1;
+
+      &-container {
+        padding-top: 42rem;
+        max-width: 37.5%;
+
+        &::before {
+          top: 31rem;
+          height: 7rem;
+          width: 2.1rem;
+        }
+      }
+    }
+  }
 }
 
 @media (min-width: $desktop) {
   .hero {
 
-
-  }
-  .hero__title {
-    text-align: center;
-    font-size: $font-size--h1;
-    color: white;
-    font-style: italic;
-    letter-spacing: -1px;
-    font-weight: 400;
-
-
-    &--accent {
-      display: block;
-      color: $text-color-accent;
-      font-weight: bold;
-    }
-
-    &-container {
-      padding-top: 42rem;
-      margin: 0 auto;
-      max-width: 37.5%;
-      position: relative;
-
-      &::before {
-        content: '';
-        @include centerer-x;
-        top: 31rem;
-        height: 7rem;
-        width: 2.1rem;
-        background-image: url('../img/icons_svg/hero_lines.svg');
-        background-repeat: no-repeat;
-      }
-    }
   }
 }
 
