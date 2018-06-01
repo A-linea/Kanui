@@ -1,8 +1,11 @@
 .card {
-  margin: 2rem 0;
   padding: 2.4rem 3.7rem 3rem 2.7rem;
   box-shadow: 0 0 10px 0 #00000026;
   position: relative;
+
+  &-box {
+    padding: 0 1.5rem;
+  }
 
   &--white {
     background-color: #fff;
@@ -13,11 +16,27 @@
     padding-bottom: 5rem;
     color: #fff;
     background-color: $color-main;
+
+    &:before {
+      position: absolute;
+      left: 47%;
+      top: -2.4rem;
+      @include triangle(right);
+      transform: rotate(90deg);
+    }
   }
 
   &--orange {
     color: #fff;
     background-color: $link-color--hover;
+
+    &:before {
+      position: absolute;
+      left: 47%;
+      top: -2.4rem;
+      @include triangle(right, $color-main);
+      transform: rotate(90deg);
+    }
   }
 
   &__top-container {
@@ -76,7 +95,7 @@
   }
 
   &__list {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
     list-style-type: none;
 
     &--dark-gray {
@@ -125,12 +144,14 @@
 
 @media (min-width: $desktop-sm) {
 
-}
-
-@media (min-width: $desktop) {
-
   .card {
     padding: 2.4rem 3.7rem 3rem 3.7rem;
+    margin: 2rem 0;
+
+    &-box {
+      padding: 0;
+    }
+
     &--dark-blue {
       margin: 0;
       padding-left: 4.7rem;
@@ -139,7 +160,6 @@
       &:before {
         @include centerer-y();
         left: -.5rem;
-        @include triangle(right)
       }
     }
 
@@ -147,7 +167,6 @@
       &:before {
         @include centerer-y();
         left: -.5rem;
-        @include triangle(right, $color-main)
       }
     }
 
@@ -159,7 +178,6 @@
       &:before {
         content: '';
         @include centerer-y();
-
         left: 0;
         width: 1.4rem;
         height: 4rem;
@@ -191,7 +209,12 @@
     }
 
     &__list {
+      font-size: 1.5rem;
       line-height: 1.7;
     }
   }
+}
+
+@media (min-width: $desktop) {
+
 }

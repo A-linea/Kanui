@@ -1,6 +1,8 @@
 .dropdown {
   display: flex;
-  //transition: box-shadow 0.3s cubic-bezier(1,1.48,1,.44) -1s;
+  padding: 1.1rem 3.5rem 1.5rem 2rem;
+  width: 89%;
+  margin: 0 auto;
   box-shadow: 3px 3px 0 0 #00000026;
   align-items: center;
   position: relative;
@@ -8,12 +10,17 @@
 
   &__content {
     position: relative;
-    background-color: currentColor;
+    padding-left: 5rem;
+    width: 89%;
+    margin: 0 auto;
+    margin-bottom: 2rem;
     max-height: 0;
     transition: max-height .3s ease-out, box-shadow .3s ease;
     overflow: hidden;
     box-shadow: 3px 3px 0 0 #00000026;
     z-index: 5;
+
+
 
     &--teal {
       background-color: $accent-color;
@@ -46,24 +53,30 @@
     }
   }
 
-  &__list {
+  &__text {
+    margin-left: 2rem;
+    font-size: 1.6rem;
     font-style: italic;
   }
 
+  &__list {
+    font-style: italic;
+    padding-bottom: 1.2rem;
+  }
 
   &:before,
   &:after {
     content: '';
     right: 3rem;
     @include centerer-y();
-    height: 12px;
+    height: 10px;
     width: 2px;
     background-color: #fff;
   }
   &:after {
     transform-origin: top;
     transform: rotate(90deg);
-    right: 2.4rem;
+    right: 2.5rem;
   }
 
   &-is--active {
@@ -79,8 +92,8 @@
   }
 
   &__icon {
-    height: 5rem;
-    width: 1.4rem;
+    height: 4rem;
+    width: 1.1rem;
   }
 
   &--teal {
@@ -94,6 +107,7 @@
   }
 
   &--orange {
+    order: 0;
     background-color: $link-color--hover;
     color: #000;
     fill: #fff;
@@ -144,6 +158,20 @@
 }
 
 @media (min-width: $tablet) {
+ .dropdown {
+   width: auto;
+
+   &__content {
+     margin: 0;
+     margin-bottom: 4rem;
+     padding-left: 6rem;
+   }
+
+   &__icon {
+     height: 5rem;
+     width: 1.4rem;
+   }
+ }
 
 }
 
@@ -154,10 +182,15 @@
 @media (min-width: $desktop) {
   .dropdown {
     padding: 1.5rem 3.5rem 1.7rem 2.5rem;
+    margin: 0;
 
-    &__content {
-      padding-left: 6rem;
-      margin-bottom: 4rem;
+    &:before,
+    &:after {
+      height: 12px;
+    }
+
+    &:after {
+      right: 2.4rem;
     }
 
     &__list {
@@ -168,7 +201,6 @@
     &__text {
       margin-left: 2.3rem;
       font-size: 2rem;
-      font-style: italic;
     }
   }
 }

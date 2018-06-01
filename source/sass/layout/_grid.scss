@@ -2,22 +2,34 @@
   @include container();
   position: relative;
 }
+
+.dropdown-row {
+  @include row();
+  position: relative;
+}
+
 .dropdown-container {
-  @include col(xs, 12, 12, 0);
-  @include col(sm, 12, 12, 0);
+  @include col(xs, 12, 12);
+  @include col(sm, 12, 12);
   @include col(md, 12, 12);
   @include col(lg, 12, 12);
   @include col(xl, 4, 12);
 }
-.dropdown-row {
-  @include row();
-  width: 100%;
-  position: absolute;
-}
 
 .dropdown-wrapper {
   display: flex;
-  flex-direction: column;
+  flex-direction: row;
+  flex-wrap: wrap;
+}
+
+.cards-container {
+  margin: 0 auto;
+  flex-basis: 89.463195%;
+  max-width: 89.463195%;
+  &--wider {
+    flex-basis: 86%;
+    max-width: 86%;
+  }
 }
 
 .about__team-row {
@@ -25,6 +37,7 @@
   @include row();
   padding-bottom: 23rem;
 }
+
 .person-container {
   @include col(xs, 12, 12, 0);
   @include col(sm, 12, 12, 0);
@@ -78,20 +91,27 @@
   display: flex;
   align-items: center;
 }
+
 @media (min-width: $mobile) {
 
 }
 
 @media (min-width: $tablet) {
 
+  .dropdown-wrapper {
+   flex-direction: column;
+
+  }
 }
 
 @media (min-width: $desktop-sm) {
+  .dropdown-row {
+    width: 100%;
+    position: absolute;
+  }
 
-}
-
-@media (min-width: $desktop) {
   .cards-container {
+    margin: 0;
     flex-basis: 31.463195%;
     max-width: 31.463195%;
     &--wider {
@@ -99,6 +119,11 @@
       max-width: 37.073608617%;
     }
   }
+
+}
+
+@media (min-width: $desktop) {
+
 
   .resources__articles-container {
     flex-wrap: nowrap;
