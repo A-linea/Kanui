@@ -11,6 +11,7 @@ export const horizontalScroll = element => {
     const currentContainerWidth = container.offsetWidth;
     const scrolled = (scroll / (width - currentContainerWidth)) * 100;
     document.querySelector(".resources__progress-scroll").style.width = scrolled + "%";
+    console.log(this.touchstart)
   }
 
   if (document.querySelector('.resources__articles-container').addEventListener) {

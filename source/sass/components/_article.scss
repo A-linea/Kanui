@@ -1,6 +1,7 @@
 .article {
 
   &__country {
+    margin: 1.5rem 0 0.8rem;
     display: inline-block;
     font-size: 1.3rem;
     letter-spacing: 1.1px;
@@ -9,7 +10,8 @@
   }
 
   &__title {
-    font-size: 1.3rem;
+    margin-bottom: 1.7rem;
+    font-size: 1.8rem;
     font-weight: 700;
     font-style: italic;
     color: $color-main;
@@ -17,11 +19,16 @@
 
   &__text {
     font-size: 1.35rem;
-    color: #565656;
+    color: $text-color;
+    line-height: 1.7;
+    margin-bottom: 1.5rem;
   }
 
   &__link {
+    padding-right: 4rem;
     font-size: 1.3rem;
+    text-transform: uppercase;
+    font-weight: 700;
     letter-spacing: 1.1px;
     color: $text-color-light;
     text-decoration: none;
@@ -30,11 +37,13 @@
     &:before {
       content: '';
       @include centerer-y();
-      right: 1.5rem;
+      right: 2.5rem;
       width: 1.5rem;
       height: 1.5rem;
+      background-size: contain;
       background-repeat: no-repeat;
       background-image: url('../img/icons_svg/arrow_right.svg');
+      opacity: 0;
       transition: $transition-time;
     }
 
@@ -65,26 +74,19 @@
 
     &__title {
       font-size: 2rem;
-      margin-bottom: 1.7rem;
     }
 
     &__text {
-      line-height: 1.7;
-      margin-bottom: 1.5rem;
+      font-size: 1.35rem;
     }
 
     &__link {
-      font-weight: 700;
-      text-transform: uppercase;
       padding-right: 4rem;
 
       &:before {
-        content: '';
-        @include centerer-y();
         right: 2rem;
         width: 2rem;
         height: 2rem;
-        opacity: 0;
       }
     }
   }

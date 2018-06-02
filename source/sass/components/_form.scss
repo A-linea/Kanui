@@ -1,3 +1,103 @@
+.form {
+  &__input-wrapper {
+    border: 1.1px solid #dcdcdc;
+    border-radius: 5rem;
+    display: flex;
+    max-width: 29rem;
+    margin-bottom: 3rem;
+    position: relative;
+    &::after {
+      content: '';
+      @include centerer-x();
+      width: 100%;
+      height: 1px;
+      background-color: #d8d8d8;
+      bottom: -2.2rem;
+    }
+    
+
+    &--focus {
+      border: 1.1px solid $link-color--hover;
+      box-shadow: 0px 0px 5px 0 rgba($link-color--hover, .41);
+    }
+    &:active,
+    &:focus {
+      border: 1.1px solid $link-color--hover;
+      box-shadow: 0px 0px 5px 0 rgba($link-color--hover, .41);
+    }
+  }
+
+  &__input {
+    padding: 1.4rem 0 1.7rem 2rem;
+    font-family: $font-family;
+    font-size: 1.2rem;
+    color: $color-main;
+    line-height: 1;
+    width: 100%;
+    border: 1.1px solid #dcdcdc;
+    border-radius: 5rem;
+    outline: none;
+    transition: $transition-time;
+    &:active,
+    &:focus {
+      border: 1.1px solid $color-main;
+      box-shadow: 0px 0px 5px 0 #23406e30;
+    }
+
+    &:not(:last-of-type) {
+      margin-bottom: 2rem;
+    }
+    &::placeholder {
+      color: #8d8d8d;
+      font-size: 1.2rem;
+      text-transform: uppercase;
+    }
+
+    &--resource {
+      margin-bottom: 0;
+      border: none;
+      color: $link-color--hover;
+      width: 90%;
+      &:active,
+      &:focus {
+        border: none;
+        box-shadow: none;
+      }
+    }
+  }
+
+  &__btn {
+    width: 50%;
+    padding: 1.4rem 0 1.7rem 2rem;
+    font-weight: 400;
+    margin-top: 2rem;
+    background-color: transparent;
+    text-align: left;
+    border: 1px solid $color-main;
+    color: $color-main;
+    position: relative;
+    transition: $transition-time;
+    &:before {
+      content: '';
+      right: 20px;
+      height: 13px;
+      width: 15px;
+      @include centerer-y();
+      background-repeat: no-repeat;
+      background-image: url('../img/icons_svg/icon_message.svg');
+    }
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $color-main;
+      color: white;
+      &:before {
+        background-image: url('../img/icons_svg/icon_message_white.svg');
+      }
+    }
+  }
+}
+
 @media (min-width: $mobile) {
 
 }
@@ -7,95 +107,17 @@
 }
 
 @media (min-width: $desktop-sm) {
-
-}
-
-@media (min-width: $desktop) {
   .form {
     &__input-wrapper {
-      border: 1.1px solid #dcdcdc;
-      border-radius: 5rem;
-      display: flex;
-      &--focus {
-        border: 1.1px solid $link-color--hover;
-        box-shadow: 0px 0px 5px 0 rgba($link-color--hover, .41);
-      }
-      &:active,
-      &:focus {
-        border: 1.1px solid $link-color--hover;
-        box-shadow: 0px 0px 5px 0 rgba($link-color--hover, .41);
-      }
-    }
-    &__input {
-      padding: 1.4rem 0 1.7rem 2rem;
-      font-family: $font-family;
-      font-size: 1.2rem;
-      color: $color-main;
-      line-height: 1;
-      width: 100%;
-      border: 1.1px solid #dcdcdc;
-      border-radius: 5rem;
-      outline: none;
-      transition: $transition-time;
-
-      &:active,
-      &:focus {
-        border: 1.1px solid $color-main;
-        box-shadow: 0px 0px 5px 0 #23406e30;
-      }
-      &:not(:last-of-type) {
-        margin-bottom: 2rem;
-      }
-      &::placeholder {
-        color: #8d8d8d;
-        font-size: 1.2rem;
-        text-transform: uppercase;
-      }
-
-      &--resource {
-        margin-bottom: 0;
-        border: none;
-        color: $link-color--hover;
-        width: 90%;
-        &:active,
-        &:focus {
-          border: none;
-          box-shadow: none;
-        }
-      }
-    }
-
-    &__btn {
-      width: 50%;
-      padding: 1.4rem 0 1.7rem 2rem;
-      font-weight: 400;
-      margin-top: 2rem;
-      background-color: transparent;
-      text-align: left;
-      border: 1px solid $color-main;
-      color: $color-main;
-      position: relative;
-      transition: $transition-time;
-      &:before {
-        content: '';
-        right: 20px;
-        height: 13px;
-        width: 15px;
-        @include centerer-y();
-        background-repeat: no-repeat;
-        background-image: url('../img/icons_svg/icon_message.svg');
-      }
-      &:hover,
-      &:active,
-      &:focus {
-        background-color: $color-main;
-        color: white;
-        &:before {
-          background-image: url('../img/icons_svg/icon_message_white.svg');
-        }
-      }
+      max-width: inherit;
     }
 
   }
 }
+
+@media (min-width: $desktop) {
+
+}
+
+
 

@@ -23,13 +23,7 @@
     background-color: $link-color--hover;
     color: $black;
   }
-  &--resources {
-    background-color: transparent;
-    padding: 0;
-    background-image: url('../img/icons_svg/arrow_right.svg');
-    background-repeat: no-repeat;
-    background-position: 90% 50%;
-  }
+
 
   &:hover,
   &:focus {
@@ -51,6 +45,19 @@
 
     @at-root a.btn--disabled {
       pointer-events: none;
+    }
+  }
+
+  &--resources {
+    background-color: transparent;
+    padding: 1rem 2rem;
+    background-position: 50% 50%;
+    background-image: url('../img/icons_svg/arrow_right.svg');
+    background-repeat: no-repeat;
+
+    &:hover,
+    &:focus {
+      background-color: transparent;
     }
   }
 
@@ -134,10 +141,6 @@
 }
 
 @media (min-width: $desktop-sm) {
-
-}
-
-@media (min-width: $desktop) {
   .btn {
     padding: 1rem 4rem 1.3rem;
     font-size: 1.3rem;
@@ -146,15 +149,16 @@
 
     &--resources {
       padding: 1rem 2rem;
-      background-image: url('../img/icons_svg/arrow_right.svg');
-      background-repeat: no-repeat;
       background-position: 50% 50%;
-
       &:hover,
       &:focus {
         background-color: transparent;
       }
     }
   }
+}
+
+@media (min-width: $desktop) {
+
 }
 

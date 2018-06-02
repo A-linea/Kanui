@@ -1,5 +1,5 @@
 .card {
-  padding: 2.4rem 3.7rem 3rem 2.7rem;
+  padding: 2.2rem 2.2rem 2.6rem 2.1rem;
   box-shadow: 0 0 10px 0 #00000026;
   position: relative;
 
@@ -13,7 +13,7 @@
 
   &--dark-blue {
     margin: 0;
-    padding-bottom: 5rem;
+    padding-bottom: 4.8rem;
     color: #fff;
     background-color: $color-main;
 
@@ -40,41 +40,69 @@
   }
 
   &__top-container {
+    margin-bottom: 2rem;
     display: flex;
     justify-content: space-between;
     align-items: center;
   }
 
   &__icon {
-    height: 4rem;
-    width: 4rem;
+    height: 3.1rem;
+    width: 3.7rem;
 
     &--docs {
-      width: 4.8rem;
+      width: 3.8rem;
     }
 
     &--list {
-      height: 4.8rem;
-      width: 4.4rem;
+      height: 3.8rem;
+      width: 3.5rem;
     }
 
     &--university {
-      width: 5.3rem;
-      height: 5.3rem;
+      width: 4.2rem;
+      height: 4.2rem;
     }
   }
+
   &__number {
     font-weight: 700;
+    padding-left: 1.7rem;
+    font-size: 4rem;
     font-style: italic;
+    position: relative;
+
+
+    &:before {
+      content: '';
+      @include centerer-y();
+      left: 0;
+      width: 1.1rem;
+      height: 3.1rem;
+      background-repeat: no-repeat;
+    }
     &--dark-blue {
       color: $color-main;
+
+      &:before {
+        background-image: url('../img/icons_svg/card_lines.svg');
+      }
     }
 
     &--teal {
       color: $accent-color;
+
+      &:before {
+        background-image: url('../img/icons_svg/card_lines.svg');
+      }
     }
 
     &--white {
+
+      &:before {
+        background-image: url('../img/icons_svg/card_lines_white.svg');
+      }
+
       color: #fff;
     }
   }
@@ -82,15 +110,15 @@
   &__title {
     font-style: italic;
     font-weight: 700;
-    margin-bottom: 2.2rem;
-    max-width: 50%;
+    margin-bottom: 1.1rem;
+    max-width: 90%;
 
     &--dark-blue {
       color: $color-main;
     }
 
     &--wide {
-      max-width: 70%;
+      max-width: 90%;
     }
   }
 
@@ -152,6 +180,20 @@
       padding: 0;
     }
 
+    &__top-container {
+      margin-bottom: 0;
+      align-items: center;
+    }
+
+    &__title {
+      max-width: 50%;
+      margin-bottom: 2.2rem;
+
+      &--wide {
+        max-width: 70%;
+      }
+    }
+
     &--dark-blue {
       margin: 0;
       padding-left: 4.7rem;
@@ -170,36 +212,34 @@
       }
     }
 
+    &__icon {
+      height: 4rem;
+      width: 4rem;
+
+      &--docs {
+        width: 4.8rem;
+      }
+
+      &--list {
+        height: 4.8rem;
+        width: 4.4rem;
+      }
+
+      &--university {
+        width: 5.3rem;
+        height: 5.3rem;
+      }
+    }
+
     &__number {
       padding-left: 1.7rem;
       font-size: 5rem;
-      position: relative;
+
 
       &:before {
-        content: '';
-        @include centerer-y();
         left: 0;
         width: 1.4rem;
         height: 4rem;
-        background-repeat: no-repeat;
-      }
-
-      &--dark-blue {
-        &:before {
-          background-image: url('../img/icons_svg/card_lines.svg');
-        }
-      }
-
-      &--teal {
-        &:before {
-          background-image: url('../img/icons_svg/card_lines.svg');
-        }
-      }
-
-      &--white {
-        &:before {
-          background-image: url('../img/icons_svg/card_lines_white.svg');
-        }
       }
     }
 

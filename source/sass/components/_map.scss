@@ -13,7 +13,7 @@
     height: 100%;
     width: 100%;
     position: absolute;
-    padding-bottom: 20rem;
+    padding-bottom: 5rem;
     .container {
       position: relative;
       height: 100%;
@@ -105,6 +105,9 @@
 
 @media (min-width: $desktop) {
   .map {
+    &__container {
+      padding-bottom: 20rem;
+    }
 
     &__nav-list {
       padding-top: 1rem;

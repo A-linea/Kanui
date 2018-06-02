@@ -1,16 +1,16 @@
 .filter {
-
-  &-btn-wrapper {
-
-  }
+  position: relative;
 
   &__btn {
     background-color: transparent;
     border: none;
     box-sizing: border-box;
-    display: inline-block;
+    display: block;
     margin: 0;
     padding: 1rem 3rem 1rem 0;
+    width: 100%;
+    max-width: 29rem;
+    text-align: left;
     white-space: nowrap;
     vertical-align: middle;
     color: #696969;
@@ -24,7 +24,6 @@
     position: relative;
     outline: none;
 
-    
     &::after {
       content: '';
       position: absolute;
@@ -56,9 +55,19 @@
     position: absolute;
     transition: all 0.3s ease-out;
     box-shadow: 0 2px 4px 0 #00000080;
+    max-height: 0;
+    left: 0;
+    overflow: hidden;
   }
 
   &__item {
+    &:first-child {
+      padding-top: 1rem;
+    }
+
+    &:last-child {
+      padding-bottom: 1rem;
+    }
 
     &-is--active {
       display: block;
@@ -70,6 +79,11 @@
     color: #6a6a6a;
     transition: $transition-time;
     position: relative;
+    display: inline-block;
+    padding: .8rem 2.5rem 0.8rem 10rem;
+    letter-spacing: 1px;
+    font-size: 1.2rem;
+    font-weight: 400;
     &:hover {
       color: #1b2f5b;
       font-weight: bold;
@@ -92,8 +106,12 @@
   }
 }
 
-
 @media (min-width: $mobile) {
+  .filter {
+    &__btn {
+
+    }
+  }
 }
 
 @media (min-width: $tablet) {
@@ -101,44 +119,23 @@
 }
 
 @media (min-width: $desktop-sm) {
-
+  .filter {
+    &__btn {
+      display: inline-block;
+      padding: 1rem 3rem 1rem 0;
+    }
+  }
 }
 
 @media (min-width: $desktop) {
   .filter {
-    position: relative;
     padding-left: 10rem;
 
     &-box {
       margin-left: auto;
     }
-    &__list {
-      max-height: 0;
-      left: 0;
-      overflow: hidden;
-    }
-
-    &__item {
-      &:first-child {
-        padding-top: 1rem;
-      }
-      &:last-child {
-        padding-bottom: 1rem;
-      }
-    }
 
     &__link {
-      display: inline-block;
-      padding: .8rem 2.5rem 0.8rem 10rem;
-      letter-spacing: 1px;
-      font-size: 1.2rem;
-      font-weight: 400;
-
-
-
-      &:hover {
-
-      }
 
     }
   }
