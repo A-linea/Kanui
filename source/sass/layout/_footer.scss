@@ -23,16 +23,51 @@
     font-weight: 700;
     color: #1b2f5b;
     text-transform: uppercase;
+    margin-bottom: 1.5rem;
   }
 
   &__contacts-text {
     color: $text-color;
+    line-height: 1.7;
   }
 
   &__contacts-phone {
     color: $text-color;
     text-decoration: none;
     transition: $transition-time;
+  }
+
+  &__btn-container {
+    margin-top: 2.8rem;
+    margin-bottom: 3rem;
+  }
+
+  &__btn {
+    margin-top: 3rem;
+    display: block;
+    text-align: left;
+    width: 100%;
+    max-width: 100%;
+    font-size: 1.3rem;
+    text-decoration: none;
+    transition: $transition-time;
+    position: relative;
+
+    &:hover,
+    &:active,
+    &:focus {
+      background-color: $color-main;
+    }
+
+    &::after {
+      content: '';
+      @include centerer-y();
+      width: 1.2rem;
+      height: 1.8rem;
+      right: 2rem;
+      background-repeat: no-repeat;
+      background-image: url(../img/icons_svg/icon_map.svg);
+    }
   }
 
   &__bottom-row {
@@ -50,12 +85,20 @@
     width: 15.8rem;
   }
 
+  &__social-container {
+    display: flex;
+    flex-direction: column;
+    padding-bottom: 2.2rem;
+    border-bottom: 1px solid #d8d8d8;
+  }
+
   &__social-icon {
     height: 2.8rem;
     width: 10.2rem;
   }
 
   &__bottom {
+    margin-top: 4.5rem;
     color: white;
     background-color: $accent-color;
     padding: 1rem 0;
@@ -63,15 +106,39 @@
 }
 
 @media (min-width: $mobile) {
+
+  .footer {
+    &__btn {
+      letter-spacing: 2px;
+      font-weight: 700;
+      text-align: left;
+      &:hover,
+      &:active,
+      &:focus {
+        background-color: $color-main;
+      }
+    }
+  }
+}
+
+@media (min-width: 550px) {
+  .footer {
+    &__btn {
+      max-width: 50%;
+    }
+  }
 }
 
 @media (min-width: $tablet) {
   .footer {
 
     &__content {
-      padding-top: 5rem;
+      padding-top: 3rem;
       max-width: inherit;
       margin: 0;
+    }
+    &__bottom {
+      margin-top: 0;
     }
 
     &__logo {
@@ -80,7 +147,7 @@
     }
 
     &__logo-container {
-      margin-bottom: 3rem;
+      margin-bottom: 1rem;
     }
 
     &__company-text-container {
@@ -97,13 +164,11 @@
 
     &__contacts-title {
       font-size: 1.5rem;
-      margin-bottom: 1.5rem;
     }
 
     &__contacts-text {
       max-width: 80%;
       font-size: 1.4rem;
-      line-height: 1.7;
     }
 
     &__contacts-phone {
@@ -115,36 +180,18 @@
       }
     }
 
-    &__btn-container {
-      margin-bottom: 3rem;
-    }
-
     &__btn {
-      margin-top: 3rem;
-      display: block;
-      text-align: left;
-      max-width: 85%;
-      font-size: 1.3rem;
-      text-decoration: none;
-      transition: $transition-time;
-      position: relative;
+      width: 100%;
+      max-width: 50%;
       &:hover {
         background-color: $color-main;
-      }
-      &::after {
-        content: '';
-        @include centerer-y();
-        width: 1.2rem;
-        height: 1.8rem;
-        right: 2rem;
-        background-repeat: no-repeat;
-        background-image: url(../img/icons_svg/icon_map.svg);
       }
     }
 
     &__social-container {
-      display: flex;
-      flex-direction: column;
+      padding-bottom: 0;
+      margin-bottom: 0;
+      border-bottom: none;
     }
 
     &__social-link {
@@ -168,10 +215,24 @@
 }
 
 @media (min-width: $desktop-sm) {
+  .footer {
+
+    &__content {
+      padding-top: 5rem;
+    }
+
+    &__btn {
+      width: inherit;
+      max-width: inherit;
+    }
+
+    &__logo-container {
+      margin-bottom: 3rem;
+    }
+  }
 
 }
 
 @media (min-width: $desktop) {
-
 
 }

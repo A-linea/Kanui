@@ -67,15 +67,17 @@
   }
 
   &__btn {
-    width: 50%;
+    width: 100%;
     padding: 1.4rem 0 1.7rem 2rem;
     font-weight: 400;
     margin-top: 2rem;
-    background-color: transparent;
+    background-color: $color-main;
     text-align: left;
     border: 1px solid $color-main;
-    color: $color-main;
+    color: white;
+    letter-spacing: 2px;
     position: relative;
+    font-weight: 700;
     transition: $transition-time;
     &:before {
       content: '';
@@ -84,7 +86,7 @@
       width: 15px;
       @include centerer-y();
       background-repeat: no-repeat;
-      background-image: url('../img/icons_svg/icon_message.svg');
+      background-image: url('../img/icons_svg/icon_message_white.svg');
     }
     &:hover,
     &:active,
@@ -99,10 +101,30 @@
 }
 
 @media (min-width: $mobile) {
+  .form {
+    &__btn {
+      letter-spacing: 2px;
+    }
+  }
+}
+
+@media (min-width: 550px) {
+  .form {
+    &__btn {
+      max-width: 50%;
+    }
+  }
 
 }
 
 @media (min-width: $tablet) {
+  .form {
+
+    &__btn {
+      width: 50%;
+      max-width: inherit;
+    }
+  }
 
 }
 
@@ -110,6 +132,20 @@
   .form {
     &__input-wrapper {
       max-width: inherit;
+      &:after {
+        display: none;
+      }
+    }
+
+    &__btn {
+      color: $color-main;
+      background-color: transparent;
+      padding: 1.4rem 0 1.7rem 2rem;
+      &:before {
+        background-image: url('../img/icons_svg/icon_message.svg');
+
+      }
+
     }
 
   }

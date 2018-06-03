@@ -11,8 +11,8 @@
 .dropdown-container {
   @include col(xs, 12, 12);
   @include col(sm, 12, 12);
-  @include col(md, 12, 12);
-  @include col(lg, 12, 12);
+  @include col(md, 6, 12);
+  @include col(lg, 4, 12);
   @include col(xl, 4, 12);
 }
 
@@ -21,6 +21,7 @@
   flex-direction: row;
   flex-wrap: wrap;
 }
+
 //@TODO margin top to prev section
 .cards-container {
   margin: 0 auto;
@@ -35,42 +36,50 @@
   }
 }
 
+.about__team {
+  width: 100%;
+}
+
 .about__team-row {
   list-style-type: none;
   @include row();
-  padding-bottom: 23rem;
+  margin: 0 auto;
+  flex-wrap: nowrap;
 }
 
 .person-container {
-  @include col(xs, 12, 12, 0);
+  @include col(xs, 11, 12, 0);
   @include col(sm, 12, 12, 0);
-  @include col(md, 12, 12);
-  @include col(lg, 12, 12);
+  @include col(md, 6, 12);
+  @include col(lg, 3, 12);
   @include col(xl, 3, 12);
+  display: flex;
+  justify-content: center;
+  align-items: center;
 }
 
 .footer__company {
   @include col(xs, 12, 12, 0);
   @include col(sm, 12, 12, 0);
   @include col(md, 12, 12);
-  @include col(lg, 12, 12);
+  @include col(lg, 3, 12);
   @include col(xl, 3, 12);
 }
 
 .footer__contacts {
   @include col(xs, 12, 12, 0);
   @include col(sm, 12, 12, 0);
-  @include col(md, 12, 12);
-  @include col(lg, 12, 12);
+  @include col(md, 6, 12);
+  @include col(lg, 3, 12);
   @include col(xl, 3, 12);
-  margin-bottom: 9rem;
+  margin-bottom: 2.7rem;
 }
 
 .footer__form-container {
   @include col(xs, 12, 12, 0);
   @include col(sm, 12, 12, 0);
-  @include col(md, 12, 12);
-  @include col(lg, 12, 12);
+  @include col(md, 6, 12);
+  @include col(lg, 6, 12);
   @include col-offset(xl, 1, 12);
   @include col(xl, 5, 12);
 }
@@ -82,7 +91,6 @@
   &::-webkit-scrollbar {
     display: none;
   }
-
   -webkit-overflow-scrolling: touch;
   overflow-x: auto;
 }
@@ -110,11 +118,31 @@
     -webkit-overflow-scrolling: touch;
     overflow-x: auto;
   }
+
+
 }
 
 @media (min-width: $tablet) {
+
+  .dropdown-row {
+    width: 100%;
+    position: absolute;
+  }
+
+  .dropdown-container--bot {
+    flex: 0 0 100%;
+    max-width: 100%;
+  }
+
   .dropdown-wrapper {
-   flex-direction: column;
+    width: inherit;
+    flex-direction: column;
+    &--bot {
+      width: 100%;
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+    }
   }
 
   .resources__articles-container {
@@ -124,6 +152,14 @@
 
     -webkit-overflow-scrolling: touch;
     overflow-x: auto;
+  }
+
+  .about__team-row {
+    padding-bottom: 4rem;
+  }
+
+  .footer__contacts {
+    margin-bottom: 9rem;
   }
 }
 
@@ -151,10 +187,13 @@
     overflow-x: hidden;
   }
 
+  .about__team-row {
+    padding-bottom: 6rem;
+  }
+
 }
 
 @media (min-width: $desktop) {
-
 
   .resources__articles-container {
     overflow-x: hidden;

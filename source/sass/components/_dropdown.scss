@@ -7,6 +7,9 @@
   align-items: center;
   position: relative;
   cursor: pointer;
+  &-box {
+    width: 100%;
+  }
 
   &__content {
     position: relative;
@@ -19,8 +22,6 @@
     overflow: hidden;
     box-shadow: 3px 3px 0 0 #00000026;
     z-index: 5;
-
-
 
     &--teal {
       background-color: $accent-color;
@@ -159,7 +160,12 @@
 
 @media (min-width: $tablet) {
  .dropdown {
-   width: auto;
+   padding: 1.2rem 2.5rem 1.2rem 1rem;
+   width: 100%;
+
+   &-box {
+     width: 48.4%;
+   }
 
    &__content {
      margin: 0 auto;
@@ -177,13 +183,13 @@
 }
 
 @media (min-width: $desktop-sm) {
-
-}
-
-@media (min-width: $desktop) {
   .dropdown {
     padding: 1.5rem 3.5rem 1.7rem 2.5rem;
     margin: 0;
+
+    &-box {
+      width: 100%;
+    }
 
     &:before,
     &:after {
@@ -204,4 +210,9 @@
       font-size: 2rem;
     }
   }
+
+}
+
+@media (min-width: $desktop) {
+
 }

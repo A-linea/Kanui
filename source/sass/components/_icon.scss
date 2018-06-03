@@ -4,6 +4,10 @@
   width: 1.8rem;
   height: 1.8rem;
 
+  &--ln-gray {
+    fill: #696969;
+  }
+
   &:hover {
     fill: $accent-color;
   }

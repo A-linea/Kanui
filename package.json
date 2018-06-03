@@ -44,6 +44,7 @@
   },
   "dependencies": {
     "babel-polyfill": "^6.26.0",
-    "page-scroll-to-id": "^1.5.8"
+    "page-scroll-to-id": "^1.5.8",
+    "swiper": "^4.3.2"
   }
 }

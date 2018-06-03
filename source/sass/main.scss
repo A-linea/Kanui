@@ -1,4 +1,5 @@
 //---------VENDORS--------
+//@import "vendors/swiper.css";
 
 //---------UTILS----------
 @import "utils/variables";
@@ -23,6 +24,7 @@
 //---------COMPONENTS-----
 
 @import "components/btn";
+@import "components/burger";
 @import "components/icon";
 @import "components/logo";
 @import "components/nav-bar";

@@ -1,8 +1,7 @@
 .person {
   color: white;
-  max-width: 80%;
-  margin: 0 auto;
   position: relative;
+  min-width: 22rem;
 
   &-icon-box {
     text-align: center;
@@ -20,9 +19,10 @@
 
   &__image-container {
     font-size: 0;
+    max-width: 19rem;
+    margin: 0 auto;
     border-radius: 50%;
     overflow: hidden;
-    border: .4rem solid transparent;
   }
 
   &__name {
@@ -46,16 +46,16 @@
 
   &__btn {
     display: block;
+    font-size: 1.3rem;
     padding-top: 1.4rem;
     padding-left: 2.3rem;
     padding-bottom: 1.7rem;
-    transform: translateY(5px);
     font-weight: 700 ;
     width: 100%;
     position: relative;
     &::after {
       content: '';
-      right: 20px;
+      right: 2rem;
       height: 13px;
       width: 15px;
       @include centerer-y();
@@ -63,24 +63,95 @@
       background-image: url('../img/icons_svg/icon_message_black.svg');
     }
   }
+  &-slider-navigation {
+    margin-top: 3.8rem;
+    display: flex;
+    justify-content: center;
+  }
+
+  &--nav-icon {
+    width: 2.5rem;
+    height: 2.5rem;
+  }
 }
 
+.slider-button-prev {
+  margin-right: 0.8rem;
+}
+.slider-button-prev,
+.slider-button-next {
+  cursor: pointer;
+}
+
+
 @media (min-width: $mobile) {
+  .person {
+    min-width: 28rem;
+  }
 
 }
 
 @media (min-width: $tablet) {
+  .person {
+    max-width: 71%;
+    margin: 0 auto;
+
+    &__name {
+      margin-top: 1rem;
+      font-size: 1.7rem;
+    }
+
+    &__position {
+      font-size: 1.1rem;
+    }
+
+    &__btn {
+      max-width: 80%;
+      margin: 0 auto;
+      font-weight: 400;
+      padding-top: 1rem;
+      padding-left: 2.3rem;
+      padding-bottom: 1.2rem;
+      font-size: 1.1rem;
+      &::after {
+        right: 2rem;
+      }
+    }
+
+
+  }
+}
+
+@media (min-width: $desktop-sm) {
   .person {
 
     &__icon {
       opacity: 0;
     }
 
-    &__btn {
-      opacity: 0;
-      font-weight: 400;
+    &__image-container {
+      border: .4rem solid transparent;
+    }
+    &__name {
+      margin-top: 2rem;
+      font-size: 2rem;
+    }
+    &__position {
+      font-size: 1.3rem;
     }
 
+    &__btn {
+      //max-width: 100%;
+      font-size: 1.3rem;
+      opacity: 0;
+      padding-top: 1.4rem;
+      padding-left: 2.3rem;
+      padding-bottom: 1.7rem;
+      transform: translateY(5px);
+            &::after {
+        right: 2rem;
+      }
+    }
     &:hover,
     &:active {
       transition: $transition-time;
@@ -110,9 +181,6 @@
       }
     }
   }
-}
-
-@media (min-width: $desktop-sm) {
 
 }
 
@@ -120,6 +188,5 @@
 
   .person {
     max-width: 20rem;
-
   }
 }

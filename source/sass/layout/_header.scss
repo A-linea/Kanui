@@ -1,7 +1,7 @@
 .header {
   display: flex;
   transition: $transition-time;
-  padding-top: 1.7rem;
+  padding-top: 1.8rem;
   position: fixed;
   width: 100%;
   top: 0;
@@ -19,8 +19,26 @@
   }
 
   &__contacts {
-    display: none;
+    display: flex;
+    margin-right: 3%;
+    align-items: center;
 
+    &--sidebar {
+      transition: padding 0.2s ease-out;
+      padding: 2.6rem 0 2.2rem 2rem;
+      margin-right: 0;
+      &--is-active {
+        padding: 2.2rem 0 2rem 4.2rem;
+      }
+    }
+  }
+
+  &__icon-container {
+    display: none;
+  }
+
+  &__btn-container {
+    display: none;
   }
 }
 
@@ -29,11 +47,26 @@
 }
 
 @media (min-width: $tablet) {
+  .header {
+    &--is-active {
+      padding: 2rem 0;
+    }
+
+    &__contacts {
+      &--sidebar {
+        padding: 2.6rem 0 1.4rem 2rem;
+        &--is-active {
+          padding: 4.2rem 0 2.5rem 4.2rem;
+        }
+      }
+    }
+  }
 
 }
 
 @media (min-width: $desktop-sm) {
   .header {
+    padding-top: 3.3rem;
 
     &--is-active {
       padding: 2.2rem 0;
@@ -44,24 +77,29 @@
     }
 
     &__icon-container {
+      display: block;
       text-decoration: none;
       padding-top: 1.3rem;
     }
 
     &__btn-container {
+      display: block;
       margin-left: 3.5rem;
       padding-top: .8rem;
     }
 
     &__contacts {
-      display: flex;
       margin-right: 3%;
+      align-items: inherit;
+      &--sidebar {
+        padding: 3.5rem 0 3.4rem 4.2rem;
+
+        &--is-active {
+          padding: 2.4rem 0 2.3rem 4.2rem;
+        }
+      }
     }
   }
-
-
-
-
 
 }
 
@@ -70,13 +108,16 @@
     padding-top: 3.5rem;
 
     &--is-active {
-      padding: 2.2rem 0;
+      padding: 2.5rem 0;
 
     }
 
     &__contacts {
-
       margin-right: 1%;
+
+      &--sidebar {
+        display: none;
+      }
     }
 
   }

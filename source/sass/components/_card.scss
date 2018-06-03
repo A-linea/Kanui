@@ -167,6 +167,12 @@
 }
 
 @media (min-width: $tablet) {
+  .card {
+    &__list {
+      font-size: 1.4rem;
+      line-height: 1.6;
+    }
+  }
 
 }
 
@@ -197,10 +203,11 @@
     &--dark-blue {
       margin: 0;
       padding-left: 4.7rem;
-      padding-bottom: 7rem;
+      padding-bottom: 8.7rem;
 
       &:before {
         @include centerer-y();
+        top: -2rem;
         left: -.5rem;
       }
     }
@@ -249,12 +256,19 @@
     }
 
     &__list {
+      font-size: 1.4rem;
+      line-height: 1.6;
+    }
+  }
+}
+@media (min-width: $desktop) {
+  .card {
+    &--dark-blue {
+      padding-bottom: 7rem;
+    }
+    &__list {
       font-size: 1.5rem;
       line-height: 1.7;
     }
   }
-}
-
-@media (min-width: $desktop) {
-
 }

@@ -88,41 +88,45 @@
           </div>
         </div>
       </div>
-      <div class="dropdown-container">
-        <div class="dropdown-wrapper">
-          <div class="dropdown dropdown--dark-gray">
-            <div class="dropdown__icon-container">
-              <svg class="dropdown__icon">
-                <use xlink:href="img/sprite.svg#dropdown_lines"></use>
-              </svg>
+      <div class="dropdown-container dropdown-container--bot">
+        <div class="dropdown-wrapper dropdown-wrapper--bot">
+          <div class="dropdown-box">
+            <div class="dropdown dropdown--dark-gray">
+              <div class="dropdown__icon-container">
+                <svg class="dropdown__icon">
+                  <use xlink:href="img/sprite.svg#dropdown_lines"></use>
+                </svg>
+              </div>
+              <p class="dropdown__text">Embedded Analytics</p>
             </div>
-            <p class="dropdown__text">Embedded Analytics</p>
-          </div>
-          <div class="dropdown__content dropdown__content--dark-gray">
-            <ul class="dropdown__list">
-              <li class="dropdown__item">BEPS</li>
-              <li class="dropdown__item">CBCO</li>
-              <li class="dropdown__item">INtercompany</li>
-              <li class="dropdown__item">PIEI</li>
-              <li class="dropdown__item">Manager TP’S</li>
-            </ul>
-          </div>
-          <div class="dropdown dropdown--dark-blue">
-            <div class="dropdown__icon-container">
-              <svg class="dropdown__icon">
-                <use xlink:href="img/sprite.svg#dropdown_lines"></use>
-              </svg>
+            <div class="dropdown__content dropdown__content--dark-gray">
+              <ul class="dropdown__list">
+                <li class="dropdown__item">BEPS</li>
+                <li class="dropdown__item">CBCO</li>
+                <li class="dropdown__item">INtercompany</li>
+                <li class="dropdown__item">PIEI</li>
+                <li class="dropdown__item">Manager TP’S</li>
+              </ul>
             </div>
-            <p class="dropdown__text">Statutory Reporting</p>
           </div>
-          <div class="dropdown__content dropdown__content--dark-blue">
-            <ul class="dropdown__list">
-              <li class="dropdown__item">BEPS</li>
-              <li class="dropdown__item">CBCO</li>
-              <li class="dropdown__item">INtercompany</li>
-              <li class="dropdown__item">PIEI</li>
-              <li class="dropdown__item">Manager TP’S</li>
-            </ul>
+          <div class="dropdown-box">
+            <div class="dropdown dropdown--dark-blue">
+              <div class="dropdown__icon-container">
+                <svg class="dropdown__icon">
+                  <use xlink:href="img/sprite.svg#dropdown_lines"></use>
+                </svg>
+              </div>
+              <p class="dropdown__text">Statutory Reporting</p>
+            </div>
+            <div class="dropdown__content dropdown__content--dark-blue">
+              <ul class="dropdown__list">
+                <li class="dropdown__item">BEPS</li>
+                <li class="dropdown__item">CBCO</li>
+                <li class="dropdown__item">INtercompany</li>
+                <li class="dropdown__item">PIEI</li>
+                <li class="dropdown__item">Manager TP’S</li>
+              </ul>
+            </div>
           </div>
         </div>
       </div>
@@ -582,10 +586,10 @@
       <h2 class="heading heading--teal">About us</h2>
       <h2 class="heading heading--white">Who is behind Kanuni</h2>
     </div>
-    <div class="about__team">
-      <ul class="about__team-row">
-        <li class="person-container">
-          <div class="person">
+    <div class="about__team swiper-container">
+      <ul class="about__team-row swiper-wrapper">
+        <li class="person-container swiper-slide">
+          <div class="person ">
             <div class="person-icon-box">
               <a href="#" class="person__link">
                 <svg class="icon person__icon">
@@ -605,7 +609,7 @@
             </button>
           </div>
         </li>
-        <li class="person-container">
+        <li class="person-container swiper-slide">
           <div class="person">
             <div class="person-icon-box">
               <a href="#" class="person__link">
@@ -628,7 +632,7 @@
           </div>
         </li>
         
-        <li class="person-container">
+        <li class="person-container swiper-slide">
           <div class="person">
             <div class="person-icon-box">
               <a href="#" class="person__link">
@@ -650,7 +654,7 @@
             </button>
           </div>
         </li>
-        <li class="person-container">
+        <li class="person-container swiper-slide">
           <div class="person">
             <div class="person-icon-box">
               <a href="#" class="person__link">
@@ -672,6 +676,18 @@
           </div>
         </li>
       </ul>
+      <div class="person-slider-navigation">
+        <div class="slider-button-prev">
+          <svg class="icon person--nav-icon">
+            <use xlink:href="img/sprite.svg#slider_arrow_left"></use>
+          </svg>
+        </div>
+        <div class="slider-button-next">
+          <svg class="icon person--nav-icon">
+            <use xlink:href="img/sprite.svg#slider_arrow_right"></use>
+          </svg>
+        </div>
+      </div>
     </div>
   </div>
 </section>
