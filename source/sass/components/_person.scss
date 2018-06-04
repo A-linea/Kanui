@@ -180,6 +180,10 @@
         transition: font-weight .3s ease;
       }
     }
+
+    &-slider-navigation {
+      display: none;
+    }
   }
 
 }

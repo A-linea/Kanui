@@ -1,5 +1,6 @@
 export const horizontalScroll = element => {
   function scrollHorizontally(e) {
+    // @TODO event for article section only
     e = window.event || e;
     const delta = Math.max(-1, Math.min(1, (e.wheelDelta || -e.detail)));
     const data = this.scrollLeft -= (delta * 30);

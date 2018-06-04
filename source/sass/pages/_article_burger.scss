@@ -1,4 +1,4 @@
-.burger {
+.article-burger {
   width: 3rem;
   height: 2rem;
   position: relative;
@@ -11,7 +11,7 @@
     display: block;
     position: absolute;
     height: 1.6px;
-    background: #d8d8d8;
+    background: $color-main;
     border-radius: 9px;
     opacity: 1;
     transform: rotate(0deg);
@@ -47,21 +47,21 @@
     height: 0;
     width: 0;
     span {
-    opacity: 0;
+      opacity: 0;
     }
 
-    .burger__top-line {
+    .article-burger__top-line {
       top: 5px;
       width: 100%;
       transform: rotate(135deg);
     }
 
-    .burger__mid-line {
+    .article-burger__mid-line {
       opacity: 0;
       left: -50px;
     }
 
-    .burger__bot-line {
+    .article-burger__bot-line {
       top: 5px;
       width: 100%;
       transform: rotate(-135deg);
@@ -69,10 +69,9 @@
   }
 }
 
-.burger-sidebar {
+.article-burger-sidebar {
   position: relative;
   margin-left: auto;
-  margin-right: 2rem;
   transform: rotate(0deg);
   transition: .5s ease-in-out;
   cursor: pointer;
@@ -122,18 +121,18 @@
       opacity: 1;
     }
 
-    .burger-sidebar__top-line {
+    .article-burger-sidebar__top-line {
       top: 5px;
       width: 100%;
       transform: rotate(135deg);
     }
 
-    .burger-sidebar__mid-line {
+    .article-burger-sidebar__mid-line {
       opacity: 0;
       left: -50px;
     }
 
-    .burger-sidebar__bot-line {
+    .article-burger-sidebar__bot-line {
       top: 5px;
       width: 100%;
       transform: rotate(-135deg);
@@ -142,17 +141,16 @@
 }
 
 @media (min-width: $tablet) {
-  .burger {
-    margin-top: -2rem;
-  }
+
 }
 
 @media (min-width: $desktop-sm) {
-  .burger {
-    margin-top: 2rem;
+  .article-burger  {
+
   }
-  .burger-sidebar {
-    margin-top: 2rem;
+
+  .article-burger-sidebar {
+    margin-top: 1rem;
     margin-left: 3rem;
 
     &--open {
@@ -162,10 +160,11 @@
 }
 
 @media (min-width: $desktop) {
-  .burger {
+  .article-burger  {
     display: none;
   }
-  .burger-sidebar {
+
+  .article-burger-sidebar {
     display: none;
   }
 }

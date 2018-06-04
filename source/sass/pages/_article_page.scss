@@ -1,0 +1,259 @@
+.header-article {
+  display: flex;
+  transition: $transition-time;
+  padding: 1.1rem 0 .9rem;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  background-color: #fff;
+  justify-content: space-between;
+  box-shadow: 0 0 20px 0 #0000003d;
+
+  &__contacts {
+    display: flex;
+    margin-right: 3%;
+    align-items: center;
+    padding: 1rem 0 1rem 2rem;
+    margin-right: 2rem;
+    &--sidebar {
+      transition: padding 0.2s ease-out;
+      padding: 2.4rem 0 2.1rem 2rem;
+    }
+  }
+
+  &__logo-container {
+    margin-left: 1rem;
+  }
+
+  &__icon-container {
+    display: none;
+  }
+
+  &__btn-container {
+    display: none;
+  }
+}
+
+.article__pagination-container {
+  display: flex;
+  justify-content: flex-start;
+  align-items: center;
+}
+
+.article__pagination-icon {
+  margin-right: 1rem;
+  margin-bottom: -0.3rem;
+  width: 1.7rem;
+  height: 1.7rem;
+  fill: $accent-color;
+  transition: $transition-time;
+}
+
+.article__pagination-link {
+  color: $accent-color;
+  text-transform: uppercase;
+  font-size: 1.3rem;
+  text-decoration: none;
+  font-weight: bold;
+  transition: $transition-time;
+  &:hover,
+  &:active {
+    .article__pagination-icon {
+      fill: $color-main;
+    }
+    color: $color-main;
+
+  }
+}
+
+.article-section__article-container {
+  @include container();
+}
+
+.article-section__article {
+  @include row();
+}
+
+.article-section__article-left-box,
+.article-section__article-right-box {
+  @include col(xs, 12, 12);
+  @include col(sm, 12, 12);
+  @include col(md, 6, 12);
+  @include col(lg, 6, 12);
+  @include col(xl, 6, 12);
+}
+
+
+
+.article-section__article-country {
+  margin: 1.5rem 0 0.8rem;
+  display: inline-block;
+  font-size: 1.3rem;
+  letter-spacing: 1.1px;
+  color: $text-color-light;
+  text-transform: uppercase;
+}
+
+.article-section__article-heading {
+  color: $color-main;
+  font-family: $font-family;
+  font-weight: 400;
+  font-size: 2.5rem;
+  font-style: italic;
+}
+
+.article-section__article-text {
+  color: $text-color;
+  font-size: 1.35rem;
+  line-height: 1.8;
+  margin-bottom: 2.5rem;
+}
+
+.text--bold {
+  font-weight: 700;
+}
+
+.text--italic {
+  font-style: italic;
+}
+
+.text--teal {
+  color: $accent-color;
+  margin-bottom: 0;
+}
+
+.text--uppercase {
+  text-transform: uppercase;
+}
+
+.article-section__article-list {
+  list-style-position: inside;
+}
+
+.article-section__article-item {
+  margin-bottom:  2.5rem;
+}
+
+.article-section__download--top,
+.article-section__download--mid
+ {
+  padding-bottom: 3.5rem;
+  margin-bottom: 2.5rem;
+  border-bottom: 1px solid #d8d8d8;
+}
+.article-section__download--bot {
+  padding-bottom: 3.5rem;
+  border-bottom: 1px solid #d8d8d8;
+}
+
+.article-section__download-title {
+  font-size: 1.3rem;
+}
+
+.article-section__download-link {
+  font-size: 1.2rem;
+  text-decoration: none;
+  color: $text-color;
+  padding-right: 5rem;
+  position: relative;
+  &::after {
+    content: '';
+    @include centerer-y();
+    background-image: url(../img/svg_icons/download_button.svg);
+    background-repeat: no-repeat;
+    right: 1.5rem;
+  }
+}
+@media (min-width: $mobile) {
+
+}
+
+@media (min-width: $tablet) {
+  .header-article {
+    padding: 1.6rem 0 1.3rem;
+    &__contacts {
+      &--sidebar {
+        padding: 3.8rem 0 2.4rem 2rem;
+      }
+    }
+  }
+}
+
+@media (min-width: $desktop-sm) {
+  .header-article {
+    padding-top: 2.4rem;
+    padding-bottom: 1.8rem;
+
+    &__logo-container {
+      margin-left: 4.8rem;
+    }
+
+    &__icon-container {
+      display: block;
+      text-decoration: none;
+    }
+
+    &__btn-container {
+      display: block;
+      margin-left: 3.5rem;
+    }
+
+    &__contacts {
+      margin-right: 3%;
+      padding: 0;
+      padding-bottom: 1rem;
+      align-items: center;
+      &--sidebar {
+        padding: 3.5rem 0 3.4rem 4.2rem;
+      }
+    }
+  }
+
+  .article-page-content {
+    margin-top: 15.1rem;
+  }
+
+  .article__pagination-link {
+    font-size: 1.6rem;
+  }
+
+  .article-section__article-heading {
+    font-size: 5rem;
+  }
+
+  .article-section__article-right-box {
+    margin-top: 5.5rem;
+  }
+
+  .article-section__article-left-box {
+    margin-top: 5.5rem;
+  }
+
+  .article-section__article-country {
+    font-size: 1.5rem;
+  }
+}
+
+@media (min-width: $desktop) {
+  .header-article {
+    padding-top: 2.4rem;
+    padding-bottom: 1.8rem;
+
+    &__contacts {
+      padding-bottom: 1rem;
+      margin-right: 1%;
+
+      &--sidebar {
+        display: none;
+      }
+    }
+  }
+
+  .article-section__article-right-box {
+    padding-right: 0;
+  }
+
+  .article-section__article-left-box {
+    padding-left: 0;
+  }
+}

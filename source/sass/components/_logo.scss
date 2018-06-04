@@ -17,6 +17,11 @@
     }
   }
 }
+
+.logo__article {
+  height: 4rem;
+  width: 11.1rem;
+}
 @media (min-width: $mobile)  {
 
 }
@@ -31,7 +36,13 @@
       width: 16rem;
     }
   }
+
+  .logo__article {
+    height: 5.8rem;
+    width: 16rem;
+  }
 }
+
 
 @media (min-width: $desktop-sm){
 
@@ -43,6 +54,10 @@
       height: 5.8rem;
       width: 16rem;
     }
+  }
+  .logo__article {
+    height: 5.8rem;
+    width: 16rem;
   }
 }
 

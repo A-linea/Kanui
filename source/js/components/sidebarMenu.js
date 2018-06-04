@@ -2,7 +2,9 @@ export const sidebarMenu = () => {
   const toggleButton = $('.burger');
   const sidebarNav = $('.main-nav');
   const sidebarToggleBtn = $('.burger-sidebar');
-  // const toggleButtonOpen = $('.burger--open');
+  const articleToggleButton = $('.article-burger');
+  const articlesidebarNav = $('.article-page-nav');
+  const articlesidebarToggleBtn = $('.article-burger-sidebar');
 
   toggleButton.click(() => {
     toggleButton.addClass('burger--open');
@@ -15,6 +17,19 @@ export const sidebarMenu = () => {
     toggleButton.removeClass('burger--open');
     sidebarNav.removeClass('main-nav--is-open');
   });
+
+  articleToggleButton.click(()=> {
+    articleToggleButton.addClass('article-burger--open');
+    articlesidebarToggleBtn.addClass('article-burger-sidebar--open');
+    articlesidebarNav.addClass('article-page-nav--is-open');
+  });
+
+  articlesidebarToggleBtn.click(() => {
+    articlesidebarToggleBtn.removeClass('article-burger-sidebar--open');
+    articleToggleButton.removeClass('article-burger--open');
+    articlesidebarNav.removeClass('article-page-nav--is-open');
+  });
+
 
 };
 
