@@ -8,10 +8,29 @@ import {sliders} from './components/sliders';
 
 $(document).ready(() => {
   sidebarMenu();
+
+  function pageOffsetFn() {
+    if ($(window).width() > 1279) {
+      return 108;
+    }
+    if ($(window).width() > 991) {
+      return 102;
+    }
+    if ($(window).width() > 767) {
+      return 98;
+    }
+    if ($(window).width() > 319) {
+      return 61;
+    }
+  }
+
   $(".main-nav__link").mPageScroll2id({
-    offset: 102,
+    offset: function () {
+      return pageOffsetFn();
+    },
     highlightClass: "main-nav__link--active"
   });
+
 
   $('.form__input--resource').focus(
     function () {
