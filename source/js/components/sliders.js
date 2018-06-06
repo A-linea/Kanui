@@ -1,4 +1,4 @@
-import Swiper from '../../../node_modules/swiper/dist/js/swiper'
+import Swiper from '../../../node_modules/swiper/dist/js/swiper';
 
 export const sliders = () => {
   const breakpoint = window.matchMedia('(min-width:992px)');
@@ -25,6 +25,22 @@ export const sliders = () => {
       }
     })
   };
+  breakpoint.addListener(breakpointChecker);
+  breakpointChecker();
+
+  const articleSlider = new Swiper('.resources__articles-content', {
+    direction: 'horizontal',
+    freeMode: false,
+    pagination: {
+      el: '.resources__progress-scroll-container',
+      type: 'progressbar',
+    },
+    slidesPerView: 'auto',
+    mousewheel: true,
+    forceToAxis: true,
+    grabCursor: true,
+  });
+
   breakpoint.addListener(breakpointChecker);
   breakpointChecker();
 };

@@ -5,6 +5,7 @@ import {horizontalScroll} from './components/horizontalScroll';
 import {dropdownFilter} from './components/dropdownFilter';
 import {coverage} from './components/map';
 import {sliders} from './components/sliders';
+import {filters} from './components/filters';
 
 $(document).ready(() => {
   sidebarMenu();
@@ -71,11 +72,9 @@ $(window).scroll(function () {
 //Dropdown features section
 accord('dropdown');
 
-const scrollContent = document.querySelector('.resources__articles-container');
-
-horizontalScroll(scrollContent);
 dropdownFilter("filter__btn");
 coverage();
 sliders();
+filters();
 
 
