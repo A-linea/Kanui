@@ -6,7 +6,6 @@ export const dropdownFilter = element => {
       direction: 'vertical',
       mousewheel: true,
       slidesPerView: 'auto',
-      // freeMode: true,
       scrollbar: {
         el: '.swiper-scrollbar',
         hide: false,

@@ -1,11 +1,12 @@
 import {sidebarMenu} from './components/sidebarMenu'
 import {accord} from './components/accord';
 import {mPageScroll2id} from 'page-scroll-to-id';
-import {horizontalScroll} from './components/horizontalScroll';
 import {dropdownFilter} from './components/dropdownFilter';
 import {coverage} from './components/map';
+import {mapSidebar} from './components/mapSidebar';
 import {sliders} from './components/sliders';
 import {filters} from './components/filters';
+import {zoomMap} from './components/zoom';
 
 $(document).ready(() => {
   sidebarMenu();
@@ -76,5 +77,17 @@ dropdownFilter("filter__btn");
 coverage();
 sliders();
 filters();
+coverage();
+mapSidebar();
+zoomMap();
 
+var docWidth = document.documentElement.offsetWidth;
 
+[].forEach.call(
+  document.querySelectorAll('*'),
+  function(el) {
+    if (el.offsetWidth > docWidth) {
+      console.log(el);
+    }
+  }
+);

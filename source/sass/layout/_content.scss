@@ -277,9 +277,10 @@
 }
 
 .map-section {
-  padding-top: 3.5rem;
+  padding-top: 2rem;
   position: relative;
   min-height: 80rem;
+  overflow: hidden;
   background-color: $accent-color;
 }
 
@@ -436,6 +437,10 @@
 
   .resources__form {
     width: 30%;
+  }
+
+  .map-section {
+    padding-top: 3.5rem;
   }
 
 }

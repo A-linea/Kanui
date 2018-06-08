@@ -5,13 +5,14 @@
   position: fixed;
   width: 100%;
   top: 0;
-  z-index: 100;
+  z-index: 1000;
   justify-content: space-between;
 
   &--is-active {
     background-color: #fff;
     padding: 1rem 0;
     box-shadow: 0 0 20px 0 #0000003d;
+    z-index: 1000;
   }
 
   &__logo-container {

@@ -1,34 +1,50 @@
+.map__section {
+  position: relative;
+  overflow: hidden;
+}
+
 .map {
   height: 100%;
   width: 100%;
   left: 0;
   background-image: url(../img/webp/map.png);
   background-repeat: no-repeat;
-  background-position: 50% 50%;
-
-  background-size: contain;
+  background-position: 10% 10%;
+  background-size: cover;
   position: absolute;
+  overflow: hidden;
 
   &__container {
     height: 100%;
     width: 100%;
     position: absolute;
     padding-bottom: 5rem;
+    overflow: hidden;
     .container {
       position: relative;
       height: 100%;
     }
   }
 
-
-  &__nav-list {
-    list-style-type: none;
-    display: flex;
+  &__countries-wrapper {
+    width: 100%;
+    overflow: hidden;
   }
 
-  &__nav-link {
-    padding-left: 4rem;
+  &__nav-list {
+    padding-top: 3rem;
+    list-style-type: none;
+    display: flex;
+    max-width: 23rem;
+    width: 19rem;
+    margin: 0 auto;
+  }
+
+  &__nav-link,
+  &__nav-link-list {
+    padding-left: 3rem;
     text-decoration: none;
+    font-size: 1.3rem;
     font-style: italic;
     text-transform: uppercase;
     color: #fff;
@@ -37,16 +53,18 @@
     &::before {
       content: '';
       @include centerer-y();
-      left: 1.8rem;
-      width: 1.6rem;
-      height: 3.6rem;
+      left: 1.5rem;
+      width: 1.1rem;
+      height: 2.6rem;
       background-repeat: no-repeat;
+      background-size: cover;
       transition: 0.8s opacity ease-out;
       opacity: 0;
     }
 
     &:hover,
-    &:active {
+    &:active,
+    &--active {
       font-weight: 700;
       &:before {
         background-image: url('../img/icons_svg/nav_lines_white.svg');
@@ -56,11 +74,210 @@
 
   }
 
+  &__list-container {
+    width: 100%;
+    position: absolute;
+    display: none;
+    padding-top: 2.5rem;
+    background-color: rgba($accent-color, 0.8);
+  }
+
+  &__list-content {
+    width: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+  }
+
+  &__countries-continent {
+    cursor: pointer;
+    padding-top: 1.3rem;
+    width: 80%;
+    max-width: 80%;
+    margin: 0 auto;
+    border-top: 1px solid rgba(#d8d8d8, 0.3);
+    position: relative;
+
+    &:last-of-type {
+      padding-bottom: 2rem;
+      border-bottom: 1px solid rgba(#d8d8d8, 0.3);
+    }
+    &:before,
+    &:after {
+      content: '';
+      right: 0.5rem;
+      position: absolute;
+      top: 1.5rem;
+      height: 10px;
+      width: 2px;
+      background-color: $color-main;
+    }
+
+    &:after {
+      transform-origin: top;
+      transform: rotate(90deg);
+      right: 0;
+      top: 2rem;
+    }
+    &--active {
+      .map__list-title {
+        color: #fff;
+      }
+      &::after {
+        background-color: #fff;
+      }
+
+      &::before {
+        display: none;
+      }
+    }
+
+    &--active + .map__list {
+      padding-top: 1rem;
+      margin-top: 1rem;
+    }
+  }
+  &__list-title {
+    font-size: 1.6rem;
+    font-weight: 700;
+    color: $color-main;
+    text-transform: uppercase;
+  }
+
+  &__list {
+    list-style-type: none;
+    width: 100%;
+    max-width: 100%;
+    margin: 0 auto;
+    display: flex;
+    padding-left: 10%;
+    flex-direction: column;
+    flex-wrap: wrap;
+    max-height: 0;
+    overflow: hidden;
+  }
+
+  &__item {
+    width: 40%;
+    margin-right: 2rem;
+    margin-bottom: 2.1rem;
+  }
+
+  &__link {
+    text-transform: uppercase;
+    text-decoration: none;
+    color: #fff;
+    background-color: transparent;
+    font-weight: 400;
+    font-size: 1.35rem;
+    margin-left: -1.9rem;
+    padding: 1rem 1.9rem;
+    white-space: nowrap;
+    letter-spacing: 1px;
+    border: 1px solid transparent;
+    border-radius: 10rem;
+    position: relative;
+    transition: .2s border ease;
+    overflow: hidden;
+
+    &::before {
+      content: '';
+      @include centerer-y();
+      right: .5rem;
+      width: .7rem;
+      height: .7rem;
+      background-repeat: no-repeat;
+    }
+
+    &:hover {
+      border: 1px solid #fff;
+      &::before {
+        background-image: url(../img/icons_svg/arrow_right_map.svg);
+      }
+    }
+    &:focus,
+    &:active,
+    &--active {
+      transition: color 0.2s ease;
+      color: $color-main;
+      font-weight: 700;
+      border: 1px solid #fff;
+      background-color: $link-color--hover;
+      &::before {
+
+        background-image: url(../img/icons_svg/arrow_right_map_black.svg);
+      }
+    }
+  }
+
+  &__country-pulse {
+    border: 10px solid  #6da46e;
+    border-radius: 30rem;
+    height: 4rem;
+    width: 4rem;
+    position: absolute;
+    animation: pulse 1.5s ease-out;
+    animation-iteration-count: infinite;
+    opacity: 0;
+    display: none;
+    &--active {
+      display: block;
+    }
+  }
+
+  &__controls-container {
+    left: 10rem;
+    position: relative;
+    top: 50%;
+    cursor: pointer;
+  }
+  
+  &__controls {
+    position: absolute;
+    left: 0;
+    top: 0;
+    width: 3.8rem;
+    height: 3.8rem;
+    background-size: cover;
+    background-repeat: no-repeat;
+    z-index: 20;
+
+
+    &--exp {
+      top: -5rem;
+      background-image: url(../img/icons_svg/map_expand_btn.svg);
+      &:hover,
+      &:active,
+      &--active {
+        background-image: url(../img/icons_svg/map_expand_btn_active.svg);
+      }
+    }
+
+    &--plus {
+      background-image: url(../img/icons_svg/map_plus_btn.svg);
+      &:hover,
+      &:active,
+      &--active {
+        background-image: url(../img/icons_svg/map_plus_btn_active.svg);
+      }
+    }
+
+    &--minus {
+      top: 5rem;
+      background-image: url(../img/icons_svg/map_minus_btn.svg);
+      &:hover,
+      &:active,
+      &--active {
+        background-image: url(../img/icons_svg/map_minus_btn_active.svg);
+      }
+    }
+  }
 }
 
 @media (min-width: $mobile) {
   .map {
-    &__content {
+
+    &__country-name {
       transform: scale(0) translateX(-10%);
       top: -6.9rem;
       padding: 1.4rem 3.5rem;
@@ -71,7 +288,7 @@
       text-transform: uppercase;
       border: 1px solid white;
       border-radius: 10rem;
-      transition: all 0.3s ease-in;
+      z-index: 2;
 
       &::before {
         content: '';
@@ -92,42 +309,507 @@
         height: 3rem;
       }
     }
-  }
-}
+    &__country-container {
+      position: absolute;
 
-@media (min-width: $tablet) {
+      &--switzerland {
+        top: 31%;
+        left: 50%;
+      }
 
-}
+      &--france {
+        top: 27%;
+        left: 50%;
+      }
 
-@media (min-width: $desktop-sm) {
+      &--england {
+        top: 26%;
+        left: 47%;
+      }
 
-}
+      &--spain {
+        top: 32%;
+        left: 47%;
+      }
 
-@media (min-width: $desktop) {
-  .map {
-    &__container {
-      padding-bottom: 20rem;
+      &--germany {
+        top: 30%;
+        left: 52%;
+        display: none;
+      }
+
+      &--portugal {
+        top: 34%;
+        left: 48%;
+      }
+
+      &--poland {
+        top: 25%;
+        left: 57%;
+      }
+
+      &--norway {
+        top: 20%;
+        left: 49%;
+        display: none;
+      }
+
+      &--china {
+        top: 35%;
+        left: 80%;
+      }
+
+      &--japan {
+        top: 45%;
+        left: 93%;
+        display: none;
+      }
+
+      &--singapore {
+        top: 70%;
+        left: 88%;
+        display: none;
+      }
+
+      &--malaysia {
+        top: 69%;
+        left: 87%;
+        display: none;
+      }
+
+      &--russia {
+        top: 20%;
+        left: 64%;
+        display: none;
+      }
+
+      &--brazil {
+        top: 67%;
+        left: 42%;
+      }
+
+      &--argentina {
+        top: 85%;
+        left: 33%;
+      }
+
+      &--columbia {
+        top: 75%;
+        left: 30%;
+      }
+
+      &--eeuu {
+        top: 45%;
+        left: 20%;
+      }
+
+      &--canada {
+        top: 33%;
+        left: 15%;
+      }
+
+      &--mexico {
+        top: 53%;
+        left: 26%;
+      }
+
+      &--panama {
+        top: 55%;
+        left: 30%;
+      }
+
+      &--costa-rica {
+        top: 59%;
+        left: 35%;
+      }
+
+      &--australia {
+        top: 80%;
+        left: 90%;
+        display: none;
+      }
+
+      &--fiji {
+        top: 82%;
+        left: 99.5%;
+        display: none;
+      }
+
+      &--tonga {
+        top: 85%;
+        left: 100%;
+        display: none;
+      }
+
+      &--samoa {
+        top: 78%;
+        left: 99%;
+        display: none;
+      }
+
+      &--new-zealand {
+        top: 93%;
+        left: 99.8%;
+        display: none;
+      }
     }
-
-    &__nav-list {
-      padding-top: 1rem;
-      margin-left: 4rem;
-    }
-
     &__country-dot {
       cursor: pointer;
       background-color: #fff;
       height: 1rem;
       width: 1rem;
+      top: 0;
+      left: 0;
       border-radius: 2rem;
       position: absolute;
       transition: box-shadow 0.3s ease;
 
-      &--swiss {
-        top: 35%;
-        left: 50%;
+      &--switzerland {
         height: 2rem;
         width: 2rem;
+      }
+
+      &:hover {
+        box-shadow: 0 0 0 .7rem $color-main;
+      }
+      &:hover > .map__country-name {
+        transform: scale(1) translateX(-50%);
+      }
+
+      &:active,
+      &--active {
+        background-color: $link-color--hover;
+        box-shadow: 0 0 0 .7rem #fff;
+      }
+      &:active > .map__country-name,
+      &--active > .map__country-name {
+        background-color: $link-color--hover;
+        transform: scale(1) translateX(-50%);
+        border: none;
+        color: black;
+        font-weight: 700;
+        &:before {
+          display: none;
+        }
+        &:after {
+          background-color: $link-color--hover;
+        }
+      }
+    }
+  }
+}
+
+@media (min-width: $tablet) {
+
+
+ .map {
+   &__country-container {
+
+     &--switzerland {
+       top: 31%;
+       left: 50%;
+     }
+
+     &--france {
+       top: 27%;
+       left: 50%;
+     }
+
+     &--england {
+       top: 26%;
+       left: 47%;
+     }
+
+     &--spain {
+       top: 32%;
+       left: 47%;
+     }
+
+     &--germany {
+       top: 30%;
+       left: 52%;
+       display: block;
+     }
+
+     &--portugal {
+       top: 34%;
+       left: 48%;
+
+     }
+
+     &--poland {
+       top: 25%;
+       left: 57%;
+     }
+
+     &--norway {
+       top: 20%;
+       left: 49%;
+       display: block;
+     }
+
+     &--china {
+       top: 35%;
+       left: 80%;
+     }
+
+     &--japan {
+       top: 45%;
+       left: 93%;
+       display: block;
+     }
+
+     &--singapore {
+       top: 70%;
+       left: 88%;
+       display: block;
+     }
+
+     &--malaysia {
+       top: 69%;
+       left: 87%;
+       display: block;
+     }
+
+     &--russia {
+       top: 20%;
+       left: 64%;
+       display: block;
+     }
+
+     &--brazil {
+       top: 67%;
+       left: 42%;
+     }
+
+     &--argentina {
+       top: 85%;
+       left: 33%;
+     }
+
+     &--columbia {
+       top: 75%;
+       left: 30%;
+     }
+
+     &--eeuu {
+       top: 45%;
+       left: 20%;
+     }
+
+     &--canada {
+       top: 33%;
+       left: 15%;
+     }
+
+     &--mexico {
+       top: 53%;
+       left: 26%;
+     }
+
+     &--panama {
+       top: 55%;
+       left: 30%;
+     }
+
+     &--costa-rica {
+       top: 59%;
+       left: 35%;
+     }
+
+     &--australia {
+       top: 80%;
+       left: 90%;
+       display: block;
+     }
+
+     &--fiji {
+       top: 82%;
+       left: 99.5%;
+     }
+
+     &--tonga {
+       top: 85%;
+       left: 100%;
+     }
+
+     &--samoa {
+       top: 78%;
+       left: 99%;
+     }
+   }
+ }
+}
+
+@media (min-width: $desktop-sm) {
+  .heading {
+    font-size: 5rem;
+  }
+
+  .map {
+    margin-top: 8rem;
+    background-position: 50% 50%;
+    background-size: contain;
+    overflow: visible;
+    &__container {
+      padding-bottom: 20rem;
+      overflow: visible;
+    }
+
+    &__top {
+      padding-left: 3%;
+    }
+
+    &__nav-list {
+      padding-top: 2rem;
+      margin: 0;
+      margin-left: 4rem;
+    }
+
+    &__nav-link,
+    &__nav-link-list {
+      padding-left: 4rem;
+      font-size: 1.6rem;
+      &::before {
+        left: 1.8rem;
+        width: 1.6rem;
+        height: 3.6rem;
+        background-repeat: no-repeat;
+        transition: 0.8s opacity ease-out;
+        opacity: 0;
+      }
+
+      &:hover,
+      &:active,
+      &--active {
+        &:before {
+          background-image: url('../img/icons_svg/nav_lines_white.svg');
+          opacity: 1;
+        }
+      }
+    }
+
+    &__list-container {
+      padding-top: 8rem;
+    }
+
+    &__countries-continent-box {
+      width: 23rem;
+    }
+
+    &__countries-continent {
+      cursor: inherit;
+      max-width: 10rem;
+      margin: 0;
+      margin-left: 23%;
+      border: 0;
+      &:last-of-type {
+        border: 0;
+      }
+      &:before,
+      &:after {
+        display: none;
+      }
+    }
+
+    &__list-content {
+      flex-direction: row;
+      flex-wrap: wrap;
+      justify-content: space-between;
+      max-height: 37rem;
+    }
+
+    &__list {
+      max-width: 25rem;
+      margin: 0;
+      padding-left: 23%;
+      padding-top: 1.5rem;
+      font-size: 1.6rem;
+      max-height: inherit;
+    }
+
+    &__item {
+      padding-top: .5rem;
+    }
+
+    &__link {
+      font-size: 1.5rem;
+      padding: 1.2rem 3rem;
+      margin-left: -3rem;
+
+      &::before {
+        right: 1.5rem;
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+
+    &__country-container {
+      position: absolute;
+
+      &--switzerland {
+        top: 31%;
+        left: 50%;
+      }
+
+      &--france {
+        top: 27%;
+        left: 50%;
+      }
+
+      &--england {
+        top: 26%;
+        left: 47%;
+      }
+
+      &--spain {
+        top: 32%;
+        left: 47%;
+      }
+
+      &--germany {
+        top: 30%;
+        left: 52%;
+      }
+
+      &--portugal {
+        top: 34%;
+        left: 48%;
+      }
+
+      &--poland {
+        top: 25%;
+        left: 57%;
+      }
+
+      &--norway {
+        top: 20%;
+        left: 49%;
+      }
+
+      &--china {
+        top: 35%;
+        left: 80%;
+      }
+
+      &--japan {
+        top: 45%;
+        left: 93%;
+      }
+
+      &--singapore {
+        top: 70%;
+        left: 88%;
+      }
+
+      &--malaysia {
+        top: 69%;
+        left: 87%;
+      }
+
+      &--russia {
+        top: 20%;
+        left: 64%;
       }
 
       &--brazil {
@@ -175,12 +857,121 @@
         left: 90%;
       }
 
+    }
+
+    &__country-dot {
+      cursor: pointer;
+      background-color: #fff;
+      height: 1rem;
+      width: 1rem;
+      top: 0;
+      left: 0;
+      border-radius: 2rem;
+      position: absolute;
+      transition: box-shadow 0.3s ease;
+      z-index: 200;
+
+      &--switzerland {
+         height: 2rem;
+         width: 2rem;
+      }
 
       &:hover {
         box-shadow: 0 0 0 .7rem $color-main;
       }
-      &:hover >.map__content {
+      &:hover > .map__country-name {
         transform: scale(1) translateX(-50%);
+      }
+
+      &:active,
+      &--active {
+        background-color: $link-color--hover;
+        box-shadow: 0 0 0 .7rem #fff;
+      }
+      &:active > .map__country-name,
+      &--active > .map__country-name {
+        background-color: $link-color--hover;
+        border: none;
+        color: black;
+        font-weight: 700;
+        z-index: 2;
+        &:before {
+          display: none;
+        }
+        &:after {
+          background-color: $link-color--hover;
+        }
+
+      }
+    }
+
+    &__country-pulse {
+      top: -15px;
+      left: -15px;
+
+      &--switzerland {
+        border: 14px solid #6da46e;
+        border-radius: 30rem;
+        height: 6rem;
+        width: 6rem;
+        top: -20px;
+        left: -20px;
+        position: absolute;
+        animation: pulse 1.5s ease-out;
+        animation-iteration-count: infinite;
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media (min-width: $desktop) {
+  .map {
+
+    &__list-container {
+      padding-top: 16rem;
+      padding-bottom: 4rem;
+    }
+
+    &__content {
+      max-height: 45rem;
+    }
+
+    &__link {
+      font-size: 1.6rem;
+      padding: 1.3rem 3.5rem;
+      margin-left: -3.5rem;
+
+      &::before {
+        right: 1.5rem;
+        width: 1rem;
+        height: 1rem;
+      }
+    }
+
+    &__country-container {
+      &--fiji {
+        top: 82%;
+        left: 99.5%;
+        display: block;
+      }
+
+      &--tonga {
+        top: 85%;
+        left: 100%;
+        display: block;
+      }
+
+      &--samoa {
+        top: 78%;
+        left: 99%;
+        display: block;
+      }
+
+      &--new-zealand {
+        top: 93%;
+        left: 99.8%;
+        display: block;
       }
     }
   }
